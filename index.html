@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/iframeResizer.contentWindow.min.js"></script>
+    <title>Landing Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .ticket table {
+            border-collapse: collapse;
+            padding: 20px;
+            font-weight: 500;
+        }
+        .ticket table td {
+            border: 2px solid #e6e6e6; 
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .ticket table tr:first-child td {
+            border-top: 0;
+        }
+        .ticket table tr td:first-child {
+            border-left: 0;
+        }
+        .ticket table tr:last-child td {
+            border-bottom: 0;
+        }
+        .ticket table tr td:last-child {
+            border-right: 0;
+        }
+        .ticket .ticket-green{
+            color: #00917c;
+        }
+        .ticket .ticket-blue{
+            color: rgba(0,128,158,255);
+        }
+        .ticket .ticket-black{
+            color: #555555;
+        }
+        .ticket i{
+            font-size: 35px;
+        }
+        .ticket-table{
+            --scaleRate: 1;
+            transform-origin: top center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+        @media (max-width: 600px) {
+            .ticket-table{
+                --scaleRate: 0.6;
+                transform: scale(0.6);
+                height: 850px;
+                margin-top: 350px;
+            }
+        }
+        @media (max-width: 400px) {
+            .ticket-table{
+                --scaleRate: 0.5;
+                transform: scale(0.5);
+                height: 680px;
+                margin-top: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-table" style="width:100vw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+        <div style="width:60vw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+            <div style="font-weight:800; margin-bottom:50px; font-size:30px; white-space: nowrap;">GET YOUR TICKET</div>
+            <div class="ticket">
+                <table>
+                        <tr>
+                            <td></td>
+                            <td class="ticket-green" style="text-align:center; font-weight:700;">IN-PERSON</td>
+                            <td class="ticket-blue" style="text-align:center; font-weight:700;">ONLINE</td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Direct access to main events
+                                <ul>
+                                    <li>Opening Ceremony</li>
+                                    <li>Keynote Speakers</li>
+                                    <li>Fireside Chats</li>
+                                    <li>Panel Discussions</li>
+                                    <li>Closing Ceremony</li>
+                                </ul>
+                            </td>
+                            <td class="ticket-green" style="text-align:center;">IN-PERSON</td>
+                            <td class="ticket-blue" style="text-align:center;">VIRTUAL STREAMING</td>
+                            <!--<td><i class="fa-solid fa-circle-check"></i></td>
+                            <td><i class="fa-solid fa-circle-xmark"></i></td>-->
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Get paired with other HPAIR delegates to network</td>
+                            <td class="ticket-green" style="text-align:center;">NETWORKING BREAK-OUT SESSIONS</td>
+                            <td class="ticket-blue" style="text-align:center;">VIRTUAL SPEED NETWORKING</td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Cultural Events
+                                <ul>
+                                    <li>International Night</li>
+                                    <li>Desi Night</li>
+                                </ul>
+                            </td>
+                            <td class="ticket-green" style="text-align:center;">PARTICIPATE IN-PERSON</td>
+                            <td class="ticket-blue" style="text-align:center;">STREAMED VIRTUALLY</td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Access to HPAIR alumni networks</td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Impact Challenge</td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Professional certificate signed by HPAIR Executives
+                            </td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Have your resume passed to Speaker Organizations & Corporate Sponsors</td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Access live speaker Q&As</td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">5 Days of 30+ speeches, fireside chats, panels & interviews</td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Access to the exclusive HPAIR Facebook/WhatsApp Community Group</td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="ticket-black">Additional Perks
+                                <ul>
+                                    <li>Experience in New Delhi</li>
+                                    <li>Welcome Kit</li>
+                                    <li>Merch and more...</li>
+                                </ul>
+                            </td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="color: #b3b3b3; text-align:center;"><i class="fa-solid fa-circle-xmark"></i></td>
+                        </tr>                      
+                        <tr>
+                            <td class="ticket-black">Participate in HPAIRx (Forum for delegates to share their stories)</td>
+                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
+                            <td class="ticket-blue" style="color: #b3b3b3; text-align:center;"><i class="fa-solid fa-circle-xmark"></i></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
