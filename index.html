@@ -78,7 +78,6 @@
 
         .speakers-grid > article img {
             max-width: 60%;
-            border-radius: 100%;
             align-items: center;
             justify-content: center;
             }
@@ -86,12 +85,125 @@
             .speakers-grid .speakers-text {
             padding: 20px;
             }
+
+
+            .past-speakers-grid{
+              margin: 0 80px;
+            }
+
+            .past-speakers-grid > article img {
+            max-width: 80%;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .past-speakers-grid .past-speakers-text {
+            padding: 20px;
+            }
+
+
+
+
+        /** features section styling **/
+        .features-col-text {
+          height:20em;
+        }
+        .features-grid-flex {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          flex-direction: row; 
+          -webkit-flex-direction: row;
+          -webkit-flex-wrap: wrap;
+          -webkit-justify-content: space-around;
+        }
+        .features-col {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+        }
+        .features-col-left {
+          -webkit-box-ordinal-group:-1;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          order: -1;
+        }
+        .features-col-text{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .features-Aligner-item {
+          width: 60%;
+        }
+        .features-col-image {
+          background-size: cover;
+          background-position:center center;
+        }
+
+        @media (max-width: 640px) {
+          .features-grid-flex {
+            height: 40em;
+            display: -webkit-flex;
+            -webkit-flex-direction: column;
+            flex-direction: column; 
+          }
+          .features-col {
+            order:vertical;
+          }
+          .features-col-left {
+            -webkit-box-ordinal-group:0;
+            -webkit-order: 0;
+            -ms-flex-order: 0;
+            order: 0;
+          }
+          .features-col-text div p {
+            padding: 1em;
+          }
+          .features-Aligner-item {
+            width: 90%;
+          }
+        }
+
+
+        .theme{
+          margin: 0 120px;
+        }
+        @media (max-width: 640px) {
+        .theme{
+          margin: 0 40px;
+        }
+      }
+
+
+
     </style>
 </head>
 <body>
 
-    <center><h1>SPEAKERS</h1></center><br></br>
-        <div class="container">
+
+  <br><br>
+  <br><br>
+
+  <center>
+    <h5 style="color: grey;">THEME</h5>
+    <h2>Finding our Future</h2>
+    <p class="theme">Forging new ground by implementing solutions that enable quick, sustainable, and resource-efficient 
+      growth; a win-win strategy pursued by young and emerging nations seeking a radical growth route</p>
+  </center>
+
+  <br><br>
+  <br><br>
+
+ 
+    <center><h1>OUR SPEAKERS</h1></center><br></br>
+      <div class="container">
             <center>
             <main class="speakers-grid" style="display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -202,16 +314,175 @@
                   <h6>Co-founder and CEO of Newslaundry</h6>
                 </div>
               </article>
+              <article>
+                <img src="https://i.ibb.co/sKtzj67/download-1-1.jpg" alt="Sample photo">
+                <div class="speakers-text">
+                  <h4>Amitabh Mattoo</h4>
+                  <h6>Padmashree Awardee & Prof. Disarmament Studies</h6>
+                </div>
+              </article>
             </main>
             </center>
+      </div>
+
+    <br><br>
+    <br><br>
+
+    <center><h1>FEATURES</h1></center><br></br>
+    <section>  
+        <div class="features-grid-flex">
+          <div class="features-col features-col-image" style="background-image: url(https://i.ibb.co/Cm600Yx/Capture.png); background-size: contain; background-repeat: no-repeat;">
+            &nbsp;
           </div>
+          <div class="features-col features-col-text features-col-left">
+            <div class="features-Aligner-item">
+              <h3>Exclusive Network</h3>
+              <p>Find your select community to be the architect of change.
+              </p>
+            </div>
+          </div>
+        </div>
 
-    
-    <br>
+        <div class="features-grid-flex">
+          <div class="features-col features-col-image" style="background-image: url(https://i.ibb.co/BPMq03W/Group-175.jpg); background-size: contain; background-repeat: no-repeat;">
+            &nbsp;
+          </div>
+          <div class="features-col features-col-text">
+            <div class="features-Aligner-item">
+              <h3>Knowledge Sessions</h3>
+              <p>Thoughtful closed-room discussions with relevant industry leaders. 
+                Every HPAIR session is designed for second-order thinking.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid-flex">
+          <div class="features-col features-col-image" style="background-image: url(https://i.ibb.co/PmQMXPq/image-73.jpg); background-size: contain; background-repeat: no-repeat;">
+            &nbsp;
+          </div>
+          <div class="features-col features-col-text features-col-left">
+            <div class="features-Aligner-item">
+              <h3>Impact Challenge</h3>
+              <p>Impact Challenges is a case-competition style workshop in partnership 
+                with leading organizations designed to ask delegates to formulate 
+                solutions to some of Asia's biggest issues. Impact Challenges have 
+                sparked startups, offered internship and travel opportunities, & 
+                 events with corporate partners.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid-flex">
+          <div class="features-col features-col-image" style="background-image: url(https://i.ibb.co/SwPnyPV/Group-249.png); background-size: contain; background-repeat: no-repeat;">
+            &nbsp;
+          </div>
+          <div class="features-col features-col-text">
+            <div class="features-Aligner-item">
+              <h3>Cultural Exchange</h3>
+              <p>HPAIR acts as a stage for cultural exchange between delegates 
+                from 40+ countries through specific cultural events like International 
+                Night and Desi Night.
+              </p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <br><br>
+    <br><br>
 
 
-    <div class="ticket-table" style="width:100vw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
-        <div style="width:60vw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+    <center><h1>PAST SPEAKERS</h1></center><br></br>
+      <div class="container">
+            <center>
+            <main class="past-speakers-grid" style="display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 30px;
+            align-items: stretch;">
+              <article>
+                <img src="https://i.ibb.co/fpGz78z/Mask-group.png" alt="Sample photo">
+                <div class="past-speakers-text">
+                  <h4>Joseph Lubin</h4>
+                  <h6>Founder, ConsenSys
+                    Co-Founder, Ethereum</h6>
+                </div>
+              </article>
+              <article>
+                <img src="https://i.ibb.co/3psY8Kf/Mask-group-1.png" alt="Sample photo">
+                <div class="past-speakers-text">
+                  <h4>Justin Kan</h4>
+                  <h6>Co-Founder of Twitch
+                    Former Partner at
+                    Y Combinator</h6>
+                </div>
+              </article>
+              <article>
+                <img src="https://i.ibb.co/26gYcsz/Mask-group-2.png" alt="Sample photo">
+                <div class="past-speakers-text">
+                  <h4>Adam D'Angelo</h4>
+                  <h6>Former CTO of Facebook
+                    CEO & Co-Founder of Quora
+                    Board Member of Instagram
+                    & OpenAI</h6>
+                </div>
+              </article>
+              <article>
+                <img src="https://i.ibb.co/s1r0f52/Group-176.png" alt="Sample photo">
+                <div class="past-speakers-text">
+                  <h4>The Honorable
+                    Ban Ki-Moon</h4>
+                  <h6>Secretary General, United
+                    Nations & Former Foreign
+                    Minister, Republic of Korea </h6>
+                </div>
+              </article>
+              <article>
+                <img src="https://i.ibb.co/kKdRnsp/Mask-group-3.png" alt="Sample photo">
+                <div class="past-speakers-text">
+                  <h4>Tim Draper</h4>
+                  <h6>Renowned Venture Capitalist
+                    Billionaire Investor in Tesla,
+                    SpaceX, Twitter, Robinhood,
+                    Baidu, Skype & others</h6>
+                </div>
+              </article>
+              <article>
+                <img src="https://i.ibb.co/WGhRMWF/Group-162.png" alt="Sample photo">
+                <div class="past-speakers-text">
+                  <h4>Kevin Sneader</h4>
+                  <h6>CEO & Global Managing
+                    Partner, McKinsey &
+                    Company</h6>
+                </div>
+              </article>
+              <article>
+                <img src="https://i.ibb.co/5x1y30L/Group-163.png" alt="Sample photo">
+                <div class="past-speakers-text">
+                  <h4>N.R. Narayana
+                    Murthy</h4>
+                  <h6>Founder, Chairman & Former
+                    CEO, Infosys - Board Member,
+                    UN Foundation</h6>
+                </div>
+              </article>
+              <article>
+                <img src="https://i.ibb.co/DRHZshB/Group-164.png" alt="Sample photo">
+                <div class="past-speakers-text">
+                  <h4>Aparna Bawa</h4>
+                  <h6>COO of Zoom</h6>
+                </div>
+              </article>
+            </main>
+            </center>
+      </div>
+
+      <br><br>
+      <br><br>
+
+    <div class="ticket-table" style="width:100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+        <div style="width:70vw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
             <div style="font-weight:800; margin-bottom:50px; font-size:30px; white-space: nowrap;">GET YOUR TICKET</div>
             <div class="ticket">
                 <table>
@@ -306,5 +577,9 @@
             </div>
         </div>
     </div>
+
+
+
+
 </body>
 </html>
