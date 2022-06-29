@@ -187,6 +187,29 @@
         }
       }
 
+      #load{
+        padding: 20px;
+        border-radius: 20px;
+        border: 2px solid black;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+      }
+
+      #load:hover{
+        background-color: white;
+        color: black;
+        transition: 0.5s ease-in-out;
+        text-decoration: none;
+      }
+
+      @media (min-width: 640px) {
+        #load{
+          display: none;
+        }
+      }
+
+
 
 
     </style>
@@ -215,7 +238,7 @@
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             grid-gap: 30px;
             align-items: stretch;">
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/d2M6NMM/Mask-group.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Debby Soo</h4>
@@ -330,10 +353,11 @@
             </main>
             </center>
       </div>
+      <br><br>
 
-      <div>
+      <center><div>
         <a href="#" id="load">Load More</a>
-        </div>
+      </div></center>
 
     <br><br>
     <br><br>
@@ -600,9 +624,7 @@
   $("#load").click(function(e) { // click event for load more
     e.preventDefault();
     $(".item:hidden").slice(0, 4).show(); // select next 10 hidden divs and show them
-    if ($(".item:hidden").length == 0) { // check if any hidden divs still exist
-      alert("No more divs"); // alert if there are none left
-    }
+    
   });
 });
 </script>
