@@ -76,6 +76,8 @@
             }
         }
 
+        
+
         .speakers-grid > article img {
             max-width: 60%;
             align-items: center;
@@ -90,6 +92,7 @@
             .past-speakers-grid{
               margin: 0 80px;
             }
+
 
             .past-speakers-grid > article img {
             max-width: 80%;
@@ -169,6 +172,9 @@
           .features-Aligner-item {
             width: 90%;
           }
+          .speakers-grid > article {
+          display: none;
+        }
         }
 
 
@@ -203,7 +209,7 @@
 
  
     <center><h1>OUR SPEAKERS</h1></center><br></br>
-      <div class="container">
+      <div class="container blogBox moreBox" id="myList">
             <center>
             <main class="speakers-grid" style="display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -216,105 +222,105 @@
                   <h6>CEO of Opentable</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/936T3t6/Mask-group-1.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Lesly Goh</h4>
                   <h6>Senior Technology Advisor and Former CTO of the World Bank</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/9NVYtYm/Mask-group-2.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Martin Roll</h4>
                   <h6>Renowned Author, Brand Strategist, Management Consultant</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/hKrpgJC/Group-176.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Miguel Soriano</h4>
                   <h6>Senior Upstream Officer at IFC</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/55ZJBds/image-92.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Masoom Minawala</h4>
                   <h6>Global Fashion Influencer and Entrepreneur</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/xFTv3Xk/Group-162.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Chow Chung-Yan</h4>
                   <h6>Executive Editor of South China Morning Post</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/XCBsyZL/Group-163.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Manish Malhotra</h4>
                   <h6>Acclaimed Fashion and Bollywood Costume Designer</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/YDzvzPJ/Group-164.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Michael Horvath</h4>
                   <h6>Founder and CEO of Strava</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/5nXLYw3/Mask-group-3.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Bandana Tewari</h4>
                   <h6>Former Editor-At-Large of Vogue India</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/Rjm91M9/Group-178.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Maria Siow</h4>
                   <h6>South China Morning Post Senior Asia Correspondent</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/TYBqWSQ/Group-177.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Deepak Bagla</h4>
                   <h6>CEO of Invest India</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/5n1JttP/Group-179.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Tim Hang Liu</h4>
                   <h6>Founder and CEO of Open Energy</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/4Y5YtYg/image-93.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Kunal Shah</h4>
                   <h6>Founder of CRED</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/0CFdVt4/image-95.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Simon Allen</h4>
                   <h6>CEO of McGraw Hill</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/D7QgsFX/image-94.png" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Abhinandan Sekhri</h4>
                   <h6>Co-founder and CEO of Newslaundry</h6>
                 </div>
               </article>
-              <article>
+              <article class="item">
                 <img src="https://i.ibb.co/sKtzj67/download-1-1.jpg" alt="Sample photo">
                 <div class="speakers-text">
                   <h4>Amitabh Mattoo</h4>
@@ -324,6 +330,10 @@
             </main>
             </center>
       </div>
+
+      <div>
+        <a href="#" id="load">Load More</a>
+        </div>
 
     <br><br>
     <br><br>
@@ -478,6 +488,8 @@
             </center>
       </div>
 
+      
+
       <br><br>
       <br><br>
 
@@ -578,8 +590,22 @@
         </div>
     </div>
 
-
-
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script>
+ $(function() {
+  $(".item").slice(0, 4).show(); // select the first ten
+  $("#load").click(function(e) { // click event for load more
+    e.preventDefault();
+    $(".item:hidden").slice(0, 4).show(); // select next 10 hidden divs and show them
+    if ($(".item:hidden").length == 0) { // check if any hidden divs still exist
+      alert("No more divs"); // alert if there are none left
+    }
+  });
+});
+</script>
 
 </body>
 </html>
