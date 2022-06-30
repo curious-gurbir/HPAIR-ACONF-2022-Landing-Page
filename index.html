@@ -1,630 +1,913 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-    <script src="js/iframeResizer.contentWindow.min.js"></script>
-    <title>Landing Page</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        .ticket table {
-            border-collapse: collapse;
-            padding: 20px;
-            font-weight: 500;
-        }
-        .ticket table td {
-            border: 2px solid #e6e6e6; 
-            padding: 20px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-        .ticket table tr:first-child td {
-            border-top: 0;
-        }
-        .ticket table tr td:first-child {
-            border-left: 0;
-        }
-        .ticket table tr:last-child td {
-            border-bottom: 0;
-        }
-        .ticket table tr td:last-child {
-            border-right: 0;
-        }
-        .ticket .ticket-green{
-            color: #00917c;
-        }
-        .ticket .ticket-blue{
-            color: rgba(0,128,158,255);
-        }
-        .ticket .ticket-black{
-            color: #555555;
-        }
-        .ticket i{
-            font-size: 35px;
-        }
-        .ticket-table{
-            --scaleRate: 1;
-            transform-origin: top center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+			integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<script src="js/iframeResizer.contentWindow.min.js"></script>
+		<title>Landing Page</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+			}
+			.ticket table {
+				border-collapse: collapse;
+				padding: 20px;
+				font-weight: 500;
+			}
+			.ticket table td {
+				border: 2px solid #e6e6e6;
+				padding: 20px;
+				font-size: 20px;
+				font-weight: 600;
+			}
+			.ticket table tr:first-child td {
+				border-top: 0;
+			}
+			.ticket table tr td:first-child {
+				border-left: 0;
+			}
+			.ticket table tr:last-child td {
+				border-bottom: 0;
+			}
+			.ticket table tr td:last-child {
+				border-right: 0;
+			}
+			.ticket .ticket-green {
+				color: #00917c;
+			}
+			.ticket .ticket-blue {
+				color: rgba(0, 128, 158, 255);
+			}
+			.ticket .ticket-black {
+				color: #555555;
+			}
+			.ticket i {
+				font-size: 35px;
+			}
+			.ticket-table {
+				--scaleRate: 1;
+				transform-origin: top center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			@media (max-width: 600px) {
+				.ticket-table {
+					--scaleRate: 0.6;
+					transform: scale(0.6);
+					height: 850px;
+					margin-top: 350px;
+				}
+			}
+			@media (max-width: 400px) {
+				.ticket-table {
+					--scaleRate: 0.5;
+					transform: scale(0.5);
+					height: 680px;
+					margin-top: 320px;
+				}
+			}
+			.speakers-grid {
+				width: 90vw;
+			}
+			.speakers-grid > article img {
+				max-width: 60%;
+				align-items: center;
+				justify-content: center;
+				border: 2px solid #e8e8e8;
+				border-radius: 50%;
+			}
 
-        }
-        @media (max-width: 600px) {
-            .ticket-table{
-                --scaleRate: 0.6;
-                transform: scale(0.6);
-                height: 850px;
-                margin-top: 350px;
-            }
-        }
-        @media (max-width: 400px) {
-            .ticket-table{
-                --scaleRate: 0.5;
-                transform: scale(0.5);
-                height: 680px;
-                margin-top: 320px;
-            }
-        }
-        .speakers-grid > article img {
-            max-width: 60%;
-            align-items: center;
-            justify-content: center;
-            }
+			.speakers-grid {
+				font-size: 16px;
+			}
+			.speakers-grid article {
+				padding-bottom: 15px;
+			}
+			.speaker-name {
+				font-size: 22px;
+				font-weight: bold;
+			}
+			.speaker-name::after {
+				content: "\a";
+				white-space: pre;
+			}
 
-            .speakers-grid .speakers-text {
-            padding: 20px;
-            }
+			.speaker-grid span {
+				font-weight: 400;
+			}
 
+			.past-speakers-grid {
+				margin: 0 80px;
+			}
 
-            .past-speakers-grid{
-              margin: 0 80px;
-            }
+			.past-speakers-grid > article img {
+				max-width: 80%;
+				align-items: center;
+				justify-content: center;
+			}
 
+			.past-speakers-grid .past-speakers-text {
+				padding: 20px;
+			}
 
-            .past-speakers-grid > article img {
-            max-width: 80%;
-            align-items: center;
-            justify-content: center;
-            }
+			/** features section styling **/
+			.features-col-text {
+				height: 20em;
+			}
+			.features-grid-flex {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-flex: 1;
+				-webkit-flex-grow: 1;
+				-ms-flex-positive: 1;
+				flex-grow: 1;
+				flex-direction: row;
+				-webkit-flex-direction: row;
+				flex-wrap: wrap;
+				-webkit-flex-wrap: wrap;
+				justify-content: space-around;
+				-webkit-justify-content: space-around;
+			}
+			.features-col {
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				-ms-flex: 1;
+				flex: 1;
+			}
+			.features-col-left {
+				-webkit-box-ordinal-group: -1;
+				-webkit-order: -1;
+				-ms-flex-order: -1;
+				order: -1;
+			}
+			.features-col-text {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.features-Aligner-item {
+				width: 60%;
+			}
+			.features-col-image {
+				background-size: cover;
+				background-position: center center;
+			}
 
-            .past-speakers-grid .past-speakers-text {
-            padding: 20px;
-            }
+			@media (max-width: 640px) {
+				.features-grid-flex {
+					height: 40em;
+					display: -webkit-flex;
+					-webkit-flex-direction: column;
+					flex-direction: column;
+				}
+				.features-col {
+					order: vertical;
+				}
+				.features-col-left {
+					-webkit-box-ordinal-group: 0;
+					-webkit-order: 0;
+					-ms-flex-order: 0;
+					order: 0;
+				}
+				.features-col-text div p {
+					padding: 1em;
+				}
+				.features-Aligner-item {
+					width: 90%;
+				}
+				.speakers-grid > article {
+					display: none;
+				}
+			}
 
+			.theme {
+				margin: 0 120px;
+			}
+			@media (max-width: 640px) {
+				.theme {
+					margin: 0 40px;
+				}
+			}
 
+			#load {
+				padding: 20px;
+				border-radius: 20px;
+				border: 2px solid black;
+				background-color: black;
+				color: white;
+				text-decoration: none;
+			}
 
+			#load:hover {
+				background-color: white;
+				color: black;
+				transition: 0.5s ease-in-out;
+				text-decoration: none;
+			}
 
-        /** features section styling **/
-        .features-col-text {
-          height:20em;
-        }
-        .features-grid-flex {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-flex: 1;
-          -webkit-flex-grow: 1;
-          -ms-flex-positive: 1;
-          flex-grow: 1;
-          flex-direction: row; 
-          -webkit-flex-direction: row;
-          -webkit-flex-wrap: wrap;
-          -webkit-justify-content: space-around;
-        }
-        .features-col {
-          -webkit-box-flex: 1;
-          -webkit-flex: 1;
-          -ms-flex: 1;
-          flex: 1;
-        }
-        .features-col-left {
-          -webkit-box-ordinal-group:-1;
-          -webkit-order: -1;
-          -ms-flex-order: -1;
-          order: -1;
-        }
-        .features-col-text{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .features-Aligner-item {
-          width: 60%;
-        }
-        .features-col-image {
-          background-size: cover;
-          background-position:center center;
-        }
+			@media (min-width: 640px) {
+				#load {
+					display: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<br /><br />
+		<br /><br />
 
-        @media (max-width: 640px) {
-          .features-grid-flex {
-            height: 40em;
-            display: -webkit-flex;
-            -webkit-flex-direction: column;
-            flex-direction: column; 
-          }
-          .features-col {
-            order:vertical;
-          }
-          .features-col-left {
-            -webkit-box-ordinal-group:0;
-            -webkit-order: 0;
-            -ms-flex-order: 0;
-            order: 0;
-          }
-          .features-col-text div p {
-            padding: 1em;
-          }
-          .features-Aligner-item {
-            width: 90%;
-          }
-          .speakers-grid > article {
-          display: none;
-        }
-        }
+		<center>
+			<h5 style="color: grey">THEME</h5>
+			<h2>Finding our Future</h2>
+			<p class="theme">
+				Forging new ground by implementing solutions that enable quick,
+				sustainable, and resource-efficient growth; a win-win strategy
+				pursued by young and emerging nations seeking a radical growth
+				route
+			</p>
+		</center>
 
+		<br /><br />
+		<br /><br />
 
-        .theme{
-          margin: 0 120px;
-        }
-        @media (max-width: 640px) {
-        .theme{
-          margin: 0 40px;
-        }
-      }
+		<center><h1>OUR SPEAKERS</h1></center>
+		<br />
+		<div class="container blogBox moreBox" id="myList">
+			<center>
+				<main
+					class="speakers-grid"
+					style="
+						display: grid;
+						grid-template-columns: repeat(
+							auto-fill,
+							minmax(250px, 1fr)
+						);
+						grid-gap: 30px;
+						align-items: start;
+					"
+				>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/d2M6NMM/Mask-group.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Debby Soo</span>
+							<span>CEO of Opentable</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/936T3t6/Mask-group-1.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Lesly Goh</span>
+							<span>
+								Senior Technology Advisor and Former CTO of the
+								World Bank
+							</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/9NVYtYm/Mask-group-2.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Martin Roll</span>
+							<span>
+								Renowned Author, Brand Strategist, Management
+								Consultant
+							</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/hKrpgJC/Group-176.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Miguel Soriano</span>
+							<span>Senior Upstream Officer at IFC</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/55ZJBds/image-92.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Masoom Minawala</span>
+							<span
+								>Global Fashion Influencer and
+								Entrepreneur</span
+							>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/xFTv3Xk/Group-162.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Chow Chung-Yan</span>
+							<span>
+								Executive Editor of South China Morning Post
+							</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/XCBsyZL/Group-163.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Manish Malhotra</span>
+							<span>
+								Acclaimed Fashion and Bollywood Costume Designer
+							</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/YDzvzPJ/Group-164.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Michael Horvath</span>
+							<span>Founder and CEO of Strava</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/5nXLYw3/Mask-group-3.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Bandana Tewari</span>
+							<span>Former Editor-At-Large of Vogue India</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/Rjm91M9/Group-178.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Maria Siow</span>
+							<span>
+								South China Morning Post Senior Asia
+								Correspondent
+							</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/TYBqWSQ/Group-177.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Deepak Bagla</span>
+							<span>CEO of Invest India</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/5n1JttP/Group-179.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Tim Hang Liu</span>
+							<span>Founder and CEO of Open Energy</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/4Y5YtYg/image-93.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Kunal Shah</span>
+							<span>Founder of CRED</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/0CFdVt4/image-95.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Simon Allen</span>
+							<span>CEO of McGraw Hill</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/D7QgsFX/image-94.png"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Abhinandan Sekhri</span>
+							<span>Co-founder and CEO of Newslaundry</span>
+						</div>
+					</article>
+					<article class="item">
+						<img
+							src="https://i.ibb.co/sKtzj67/download-1-1.jpg"
+							alt="Sample photo"
+						/>
+						<div class="speakers-text">
+							<span class="speaker-name">Amitabh Mattoo</span>
+							<span>
+								Padmashree Awardee & Prof. Disarmament Studies
+							</span>
+						</div>
+					</article>
+				</main>
+			</center>
+		</div>
+		<br /><br />
 
-      #load{
-        padding: 20px;
-        border-radius: 20px;
-        border: 2px solid black;
-        background-color: black;
-        color: white;
-        text-decoration: none;
-      }
+		<center>
+			<div>
+				<a href="#" id="load">Load More</a>
+			</div>
+		</center>
 
-      #load:hover{
-        background-color: white;
-        color: black;
-        transition: 0.5s ease-in-out;
-        text-decoration: none;
-      }
+		<br /><br />
+		<br /><br />
 
-      @media (min-width: 640px) {
-        #load{
-          display: none;
-        }
-      }
+		<center><h1>FEATURES</h1></center>
+		<br />
+		<section>
+			<div class="features-grid-flex">
+				<div
+					class="features-col features-col-image"
+					style="
+						background-image: url(https://i.ibb.co/Cm600Yx/Capture.png);
+						background-size: contain;
+						background-repeat: no-repeat;
+					"
+				>
+					&nbsp;
+				</div>
+				<div class="features-col features-col-text features-col-left">
+					<div class="features-Aligner-item">
+						<h3>Exclusive Network</h3>
+						<p>
+							Find your select community to be the architect of
+							change.
+						</p>
+					</div>
+				</div>
+			</div>
 
+			<div class="features-grid-flex">
+				<div
+					class="features-col features-col-image"
+					style="
+						background-image: url(https://i.ibb.co/BPMq03W/Group-175.jpg);
+						background-size: contain;
+						background-repeat: no-repeat;
+					"
+				>
+					&nbsp;
+				</div>
+				<div class="features-col features-col-text">
+					<div class="features-Aligner-item">
+						<h3>Knowledge Sessions</h3>
+						<p>
+							Thoughtful closed-room discussions with relevant
+							industry leaders. Every HPAIR session is designed
+							for second-order thinking.
+						</p>
+					</div>
+				</div>
+			</div>
 
+			<div class="features-grid-flex">
+				<div
+					class="features-col features-col-image"
+					style="
+						background-image: url(https://i.ibb.co/PmQMXPq/image-73.jpg);
+						background-size: contain;
+						background-repeat: no-repeat;
+					"
+				>
+					&nbsp;
+				</div>
+				<div class="features-col features-col-text features-col-left">
+					<div class="features-Aligner-item">
+						<h3>Impact Challenge</h3>
+						<p>
+							Impact Challenges is a case-competition style
+							workshop in partnership with leading organizations
+							designed to ask delegates to formulate solutions to
+							some of Asia's biggest issues. Impact Challenges
+							have sparked startups, offered internship and travel
+							opportunities, & events with corporate partners.
+						</p>
+					</div>
+				</div>
+			</div>
 
+			<div class="features-grid-flex">
+				<div
+					class="features-col features-col-image"
+					style="
+						background-image: url(https://i.ibb.co/SwPnyPV/Group-249.png);
+						background-size: contain;
+						background-repeat: no-repeat;
+					"
+				>
+					&nbsp;
+				</div>
+				<div class="features-col features-col-text">
+					<div class="features-Aligner-item">
+						<h3>Cultural Exchange</h3>
+						<p>
+							HPAIR acts as a stage for cultural exchange between
+							delegates from 40+ countries through specific
+							cultural events like International Night and Desi
+							Night.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    </style>
-</head>
-<body>
+		<br /><br />
+		<br /><br />
 
+		<center><h1>PAST SPEAKERS</h1></center>
+		<br />
+		<div class="container">
+			<center>
+				<main
+					class="past-speakers-grid"
+					style="
+						display: grid;
+						grid-template-columns: repeat(
+							auto-fill,
+							minmax(250px, 1fr)
+						);
+						grid-gap: 30px;
+						align-items: stretch;
+					"
+				>
+					<article>
+						<img
+							src="https://i.ibb.co/fpGz78z/Mask-group.png"
+							alt="Sample photo"
+						/>
+						<div class="past-speakers-text">
+							<span class="speaker-name">Joseph Lubin</span>
+							<span>Founder, ConsenSys Co-Founder, Ethereum</span>
+						</div>
+					</article>
+					<article>
+						<img
+							src="https://i.ibb.co/3psY8Kf/Mask-group-1.png"
+							alt="Sample photo"
+						/>
+						<div class="past-speakers-text">
+							<span class="speaker-name">Justin Kan</span>
+							<span>
+								Co-Founder of Twitch Former Partner at Y
+								Combinator
+							</span>
+						</div>
+					</article>
+					<article>
+						<img
+							src="https://i.ibb.co/26gYcsz/Mask-group-2.png"
+							alt="Sample photo"
+						/>
+						<div class="past-speakers-text">
+							<span class="speaker-name">Adam D'Angelo</span>
+							<span>
+								Former CTO of Facebook CEO & Co-Founder of Quora
+								Board Member of Instagram & OpenAI
+							</span>
+						</div>
+					</article>
+					<article>
+						<img
+							src="https://i.ibb.co/s1r0f52/Group-176.png"
+							alt="Sample photo"
+						/>
+						<div class="past-speakers-text">
+							<span class="speaker-name"
+								>The Honorable Ban Ki-Moon</span
+							>
+							<span>
+								Secretary General, United Nations & Former
+								Foreign Minister, Republic of Korea
+							</span>
+						</div>
+					</article>
+					<article>
+						<img
+							src="https://i.ibb.co/kKdRnsp/Mask-group-3.png"
+							alt="Sample photo"
+						/>
+						<div class="past-speakers-text">
+							<span class="speaker-name">Tim Draper</span>
+							<span>
+								Renowned Venture Capitalist Billionaire Investor
+								in Tesla, SpaceX, Twitter, Robinhood, Baidu,
+								Skype & others
+							</span>
+						</div>
+					</article>
+					<article>
+						<img
+							src="https://i.ibb.co/WGhRMWF/Group-162.png"
+							alt="Sample photo"
+						/>
+						<div class="past-speakers-text">
+							<span class="speaker-name">Kevin Sneader</span>
+							<span>
+								CEO & Global Managing Partner, McKinsey &
+								Company
+							</span>
+						</div>
+					</article>
+					<article>
+						<img
+							src="https://i.ibb.co/5x1y30L/Group-163.png"
+							alt="Sample photo"
+						/>
+						<div class="past-speakers-text">
+							<span class="speaker-name"
+								>N.R. Narayana Murthy</span
+							>
+							<span>
+								Founder, Chairman & Former CEO, Infosys - Board
+								Member, UN Foundation
+							</span>
+						</div>
+					</article>
+					<article>
+						<img
+							src="https://i.ibb.co/DRHZshB/Group-164.png"
+							alt="Sample photo"
+						/>
+						<div class="past-speakers-text">
+							<span class="speaker-name">Aparna Bawa</span>
+							<span>COO of Zoom</span>
+						</div>
+					</article>
+				</main>
+			</center>
+		</div>
 
-  <br><br>
-  <br><br>
+		<br /><br />
+		<br /><br />
 
-  <center>
-    <h5 style="color: grey;">THEME</h5>
-    <h2>Finding our Future</h2>
-    <p class="theme">Forging new ground by implementing solutions that enable quick, sustainable, and resource-efficient 
-      growth; a win-win strategy pursued by young and emerging nations seeking a radical growth route</p>
-  </center>
-
-  <br><br>
-  <br><br>
-
- 
-    <center><h1>OUR SPEAKERS</h1></center><br></br>
-      <div class="container blogBox moreBox" id="myList">
-            <center>
-            <main class="speakers-grid" style="display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-gap: 30px;
-            align-items: stretch;">
-              <article class="item">
-                <img src="https://i.ibb.co/d2M6NMM/Mask-group.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Debby Soo</h4>
-                  <h6>CEO of Opentable</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/936T3t6/Mask-group-1.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Lesly Goh</h4>
-                  <h6>Senior Technology Advisor and Former CTO of the World Bank</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/9NVYtYm/Mask-group-2.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Martin Roll</h4>
-                  <h6>Renowned Author, Brand Strategist, Management Consultant</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/hKrpgJC/Group-176.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Miguel Soriano</h4>
-                  <h6>Senior Upstream Officer at IFC</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/55ZJBds/image-92.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Masoom Minawala</h4>
-                  <h6>Global Fashion Influencer and Entrepreneur</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/xFTv3Xk/Group-162.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Chow Chung-Yan</h4>
-                  <h6>Executive Editor of South China Morning Post</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/XCBsyZL/Group-163.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Manish Malhotra</h4>
-                  <h6>Acclaimed Fashion and Bollywood Costume Designer</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/YDzvzPJ/Group-164.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Michael Horvath</h4>
-                  <h6>Founder and CEO of Strava</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/5nXLYw3/Mask-group-3.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Bandana Tewari</h4>
-                  <h6>Former Editor-At-Large of Vogue India</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/Rjm91M9/Group-178.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Maria Siow</h4>
-                  <h6>South China Morning Post Senior Asia Correspondent</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/TYBqWSQ/Group-177.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Deepak Bagla</h4>
-                  <h6>CEO of Invest India</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/5n1JttP/Group-179.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Tim Hang Liu</h4>
-                  <h6>Founder and CEO of Open Energy</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/4Y5YtYg/image-93.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Kunal Shah</h4>
-                  <h6>Founder of CRED</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/0CFdVt4/image-95.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Simon Allen</h4>
-                  <h6>CEO of McGraw Hill</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/D7QgsFX/image-94.png" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Abhinandan Sekhri</h4>
-                  <h6>Co-founder and CEO of Newslaundry</h6>
-                </div>
-              </article>
-              <article class="item">
-                <img src="https://i.ibb.co/sKtzj67/download-1-1.jpg" alt="Sample photo">
-                <div class="speakers-text">
-                  <h4>Amitabh Mattoo</h4>
-                  <h6>Padmashree Awardee & Prof. Disarmament Studies</h6>
-                </div>
-              </article>
-            </main>
-            </center>
-      </div>
-      <br><br>
-
-      <center><div>
-        <a href="#" id="load">Load More</a>
-      </div></center>
-
-    <br><br>
-    <br><br>
-
-    <center><h1>FEATURES</h1></center><br></br>
-    <section>  
-        <div class="features-grid-flex">
-          <div class="features-col features-col-image" style="background-image: url(https://i.ibb.co/Cm600Yx/Capture.png); background-size: contain; background-repeat: no-repeat;">
-            &nbsp;
-          </div>
-          <div class="features-col features-col-text features-col-left">
-            <div class="features-Aligner-item">
-              <h3>Exclusive Network</h3>
-              <p>Find your select community to be the architect of change.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="features-grid-flex">
-          <div class="features-col features-col-image" style="background-image: url(https://i.ibb.co/BPMq03W/Group-175.jpg); background-size: contain; background-repeat: no-repeat;">
-            &nbsp;
-          </div>
-          <div class="features-col features-col-text">
-            <div class="features-Aligner-item">
-              <h3>Knowledge Sessions</h3>
-              <p>Thoughtful closed-room discussions with relevant industry leaders. 
-                Every HPAIR session is designed for second-order thinking.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="features-grid-flex">
-          <div class="features-col features-col-image" style="background-image: url(https://i.ibb.co/PmQMXPq/image-73.jpg); background-size: contain; background-repeat: no-repeat;">
-            &nbsp;
-          </div>
-          <div class="features-col features-col-text features-col-left">
-            <div class="features-Aligner-item">
-              <h3>Impact Challenge</h3>
-              <p>Impact Challenges is a case-competition style workshop in partnership 
-                with leading organizations designed to ask delegates to formulate 
-                solutions to some of Asia's biggest issues. Impact Challenges have 
-                sparked startups, offered internship and travel opportunities, & 
-                 events with corporate partners.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="features-grid-flex">
-          <div class="features-col features-col-image" style="background-image: url(https://i.ibb.co/SwPnyPV/Group-249.png); background-size: contain; background-repeat: no-repeat;">
-            &nbsp;
-          </div>
-          <div class="features-col features-col-text">
-            <div class="features-Aligner-item">
-              <h3>Cultural Exchange</h3>
-              <p>HPAIR acts as a stage for cultural exchange between delegates 
-                from 40+ countries through specific cultural events like International 
-                Night and Desi Night.
-              </p>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <br><br>
-    <br><br>
-
-
-    <center><h1>PAST SPEAKERS</h1></center><br></br>
-      <div class="container">
-            <center>
-            <main class="past-speakers-grid" style="display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-gap: 30px;
-            align-items: stretch;">
-              <article>
-                <img src="https://i.ibb.co/fpGz78z/Mask-group.png" alt="Sample photo">
-                <div class="past-speakers-text">
-                  <h4>Joseph Lubin</h4>
-                  <h6>Founder, ConsenSys
-                    Co-Founder, Ethereum</h6>
-                </div>
-              </article>
-              <article>
-                <img src="https://i.ibb.co/3psY8Kf/Mask-group-1.png" alt="Sample photo">
-                <div class="past-speakers-text">
-                  <h4>Justin Kan</h4>
-                  <h6>Co-Founder of Twitch
-                    Former Partner at
-                    Y Combinator</h6>
-                </div>
-              </article>
-              <article>
-                <img src="https://i.ibb.co/26gYcsz/Mask-group-2.png" alt="Sample photo">
-                <div class="past-speakers-text">
-                  <h4>Adam D'Angelo</h4>
-                  <h6>Former CTO of Facebook
-                    CEO & Co-Founder of Quora
-                    Board Member of Instagram
-                    & OpenAI</h6>
-                </div>
-              </article>
-              <article>
-                <img src="https://i.ibb.co/s1r0f52/Group-176.png" alt="Sample photo">
-                <div class="past-speakers-text">
-                  <h4>The Honorable
-                    Ban Ki-Moon</h4>
-                  <h6>Secretary General, United
-                    Nations & Former Foreign
-                    Minister, Republic of Korea </h6>
-                </div>
-              </article>
-              <article>
-                <img src="https://i.ibb.co/kKdRnsp/Mask-group-3.png" alt="Sample photo">
-                <div class="past-speakers-text">
-                  <h4>Tim Draper</h4>
-                  <h6>Renowned Venture Capitalist
-                    Billionaire Investor in Tesla,
-                    SpaceX, Twitter, Robinhood,
-                    Baidu, Skype & others</h6>
-                </div>
-              </article>
-              <article>
-                <img src="https://i.ibb.co/WGhRMWF/Group-162.png" alt="Sample photo">
-                <div class="past-speakers-text">
-                  <h4>Kevin Sneader</h4>
-                  <h6>CEO & Global Managing
-                    Partner, McKinsey &
-                    Company</h6>
-                </div>
-              </article>
-              <article>
-                <img src="https://i.ibb.co/5x1y30L/Group-163.png" alt="Sample photo">
-                <div class="past-speakers-text">
-                  <h4>N.R. Narayana
-                    Murthy</h4>
-                  <h6>Founder, Chairman & Former
-                    CEO, Infosys - Board Member,
-                    UN Foundation</h6>
-                </div>
-              </article>
-              <article>
-                <img src="https://i.ibb.co/DRHZshB/Group-164.png" alt="Sample photo">
-                <div class="past-speakers-text">
-                  <h4>Aparna Bawa</h4>
-                  <h6>COO of Zoom</h6>
-                </div>
-              </article>
-            </main>
-            </center>
-      </div>
-
-      
-
-      <br><br>
-      <br><br>
-
-    <div class="ticket-table" style="width:100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
-        <div style="width:70vw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
-            <div style="font-weight:800; margin-bottom:50px; font-size:30px; white-space: nowrap;">GET YOUR TICKET</div>
-            <div class="ticket">
-                <table>
-                        <tr>
-                            <td></td>
-                            <td class="ticket-green" style="text-align:center; font-weight:700;">IN-PERSON</td>
-                            <td class="ticket-blue" style="text-align:center; font-weight:700;">ONLINE</td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Direct access to main events
-                                <ul>
-                                    <li>Opening Ceremony</li>
-                                    <li>Keynote Speakers</li>
-                                    <li>Fireside Chats</li>
-                                    <li>Panel Discussions</li>
-                                    <li>Closing Ceremony</li>
-                                </ul>
-                            </td>
-                            <td class="ticket-green" style="text-align:center;">IN-PERSON</td>
-                            <td class="ticket-blue" style="text-align:center;">VIRTUAL STREAMING</td>
-                            <!--<td><i class="fa-solid fa-circle-check"></i></td>
+		<div
+			class="ticket-table"
+			style="
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+			"
+		>
+			<div
+				style="
+					width: 70vw;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					gap: 10px;
+				"
+			>
+				<div
+					style="
+						font-weight: 800;
+						margin-bottom: 50px;
+						font-size: 30px;
+						white-space: nowrap;
+					"
+				>
+					GET YOUR TICKET
+				</div>
+				<div class="ticket">
+					<table>
+						<tr>
+							<td></td>
+							<td
+								class="ticket-green"
+								style="text-align: center; font-weight: 700"
+							>
+								IN-PERSON
+							</td>
+							<td
+								class="ticket-blue"
+								style="text-align: center; font-weight: 700"
+							>
+								ONLINE
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Direct access to main events
+								<ul>
+									<li>Opening Ceremony</li>
+									<li>Keynote Speakers</li>
+									<li>Fireside Chats</li>
+									<li>Panel Discussions</li>
+									<li>Closing Ceremony</li>
+								</ul>
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								IN-PERSON
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								VIRTUAL STREAMING
+							</td>
+							<!--<td><i class="fa-solid fa-circle-check"></i></td>
                             <td><i class="fa-solid fa-circle-xmark"></i></td>-->
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Get paired with other HPAIR delegates to network</td>
-                            <td class="ticket-green" style="text-align:center;">NETWORKING BREAK-OUT SESSIONS</td>
-                            <td class="ticket-blue" style="text-align:center;">VIRTUAL SPEED NETWORKING</td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Cultural Events
-                                <ul>
-                                    <li>International Night</li>
-                                    <li>Desi Night</li>
-                                </ul>
-                            </td>
-                            <td class="ticket-green" style="text-align:center;">PARTICIPATE IN-PERSON</td>
-                            <td class="ticket-blue" style="text-align:center;">STREAMED VIRTUALLY</td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Access to HPAIR alumni networks</td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Impact Challenge</td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Professional certificate signed by HPAIR Executives
-                            </td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Have your resume passed to Speaker Organizations & Corporate Sponsors</td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Access live speaker Q&As</td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">5 Days of 30+ speeches, fireside chats, panels & interviews</td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Access to the exclusive HPAIR Facebook/WhatsApp Community Group</td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="ticket-black">Additional Perks
-                                <ul>
-                                    <li>Experience in New Delhi</li>
-                                    <li>Welcome Kit</li>
-                                    <li>Merch and more...</li>
-                                </ul>
-                            </td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="color: #b3b3b3; text-align:center;"><i class="fa-solid fa-circle-xmark"></i></td>
-                        </tr>                      
-                        <tr>
-                            <td class="ticket-black">Participate in HPAIRx (Forum for delegates to share their stories)</td>
-                            <td class="ticket-green" style="text-align:center;"><i class="fa-solid fa-circle-check"></i></td>
-                            <td class="ticket-blue" style="color: #b3b3b3; text-align:center;"><i class="fa-solid fa-circle-xmark"></i></td>
-                        </tr>
-                </table>
-            </div>
-        </div>
-    </div>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Get paired with other HPAIR delegates to network
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								NETWORKING BREAK-OUT SESSIONS
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								VIRTUAL SPEED NETWORKING
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Cultural Events
+								<ul>
+									<li>International Night</li>
+									<li>Desi Night</li>
+								</ul>
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								PARTICIPATE IN-PERSON
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								STREAMED VIRTUALLY
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Access to HPAIR alumni networks
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">Impact Challenge</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Professional certificate signed by HPAIR
+								Executives
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Have your resume passed to Speaker Organizations
+								& Corporate Sponsors
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Access live speaker Q&As
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								5 Days of 30+ speeches, fireside chats, panels &
+								interviews
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Access to the exclusive HPAIR Facebook/WhatsApp
+								Community Group
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td class="ticket-blue" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Additional Perks
+								<ul>
+									<li>Experience in New Delhi</li>
+									<li>Welcome Kit</li>
+									<li>Merch and more...</li>
+								</ul>
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td
+								class="ticket-blue"
+								style="color: #b3b3b3; text-align: center"
+							>
+								<i class="fa-solid fa-circle-xmark"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="ticket-black">
+								Participate in HPAIRx (Forum for delegates to
+								share their stories)
+							</td>
+							<td class="ticket-green" style="text-align: center">
+								<i class="fa-solid fa-circle-check"></i>
+							</td>
+							<td
+								class="ticket-blue"
+								style="color: #b3b3b3; text-align: center"
+							>
+								<i class="fa-solid fa-circle-xmark"></i>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
 
-    <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-<script>
- $(function() {
-  $(".item").slice(0, 4).show(); // select the first ten
-  $("#load").click(function(e) { // click event for load more
-    e.preventDefault();
-    $(".item:hidden").slice(0, 4).show(); // select next 10 hidden divs and show them
-    
-  });
-});
-</script>
-
-</body>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"
+		></script>
+		<script>
+			$(function () {
+				$(".item").slice(0, 4).show(); // select the first ten
+				$("#load").click(function (e) {
+					// click event for load more
+					e.preventDefault();
+					$(".item:hidden").slice(0, 4).show(); // select next 10 hidden divs and show them
+				});
+			});
+		</script>
+	</body>
 </html>
