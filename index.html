@@ -11,6 +11,21 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
+<link href="styles.sass" rel="stylesheet/scss" type="text/css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.6/swiper-bundle.css" integrity="sha512-LTz09eiSkjtMayQgsyCcxuA2POUuvwdJoejrNLLIj5tulySAEAFgRHXW5JO4/qW36nurH8iApZ4SMj9E2rRHtQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
 		<script src="js/iframeResizer.contentWindow.min.js"></script>
 		<title>Landing Page</title>
 		<style>
@@ -204,6 +219,116 @@
 					margin: 0 40px;
 				}
 			}
+
+      .slide-container{
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.card{
+  border-radius: 25px;
+  background-color: #FFF;
+}
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+.card-image{
+  position: relative;
+  height: 250px;
+  width: 250px;
+    overflow: hidden;
+  padding: 3px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+    margin-bottom: 20px;
+  transform:scaleY(1.7);
+  transform-origin:top; 
+}
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+.swiper-navBtn{
+  
+  color: #00917C;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  
+  color: #00917C;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+.swiper-pagination-bullet{
+  
+  background-color: #00917C;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  
+  background-color: #00917C;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+}
 
 			#load {
 				padding: 20px;
@@ -555,10 +680,141 @@
 
 		<br /><br />
 		<br /><br />
-
+<br>
 		<center><h1>PAST SPEAKERS</h1></center>
-		<br />
-		<div class="container">
+    <div class="slide-container swiper">
+      <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper">
+              
+            <div class="card swiper-slide">
+              <div class="image-content">
+                  <span class="overlay"></span>
+
+                  <div class="card-image">
+                      <img src="https://i.ibb.co/DRHZshB/Group-164.png" alt="" class="card-img">
+                  </div>
+              </div>
+
+              <div class="card-content">
+                  <h2 class="name">Aparna Bawa</h2>
+                  <p class="description">COO of Zoom</p>
+              </div>
+          </div>
+
+          <div class="card swiper-slide">
+              <div class="image-content">
+                  <span class="overlay"></span>
+
+                  <div class="card-image">
+                      <img src="https://i.ibb.co/5x1y30L/Group-163.png" alt="" class="card-img">
+                  </div>
+              </div>
+
+              <div class="card-content">
+                  <h2 class="name">N.R. Narayana Murthy</h2>
+                  <p class="description">Founder, Chairman & Former CEO, Infosys - Board Member, UN Foundation</p>
+                </div>
+          </div>
+
+          <div class="card swiper-slide">
+              <div class="image-content">
+                  <span class="overlay"></span>
+
+                  <div class="card-image">
+                      <img src="https://i.ibb.co/WGhRMWF/Group-162.png" alt="" class="card-img">
+                  </div>
+              </div>
+
+              <div class="card-content">
+                  <h2 class="name">Kevin Sneader</h2>
+                  <p class="description">CEO & Global Managing Partner, McKinsey & Company</p>
+                </div>
+          </div>
+
+          <div class="card swiper-slide">
+              <div class="image-content">
+                  <span class="overlay"></span>
+
+                  <div class="card-image">
+                      <img src="https://i.ibb.co/kKdRnsp/Mask-group-3.png" alt="" class="card-img">
+                  </div>
+              </div>
+
+              <div class="card-content">
+                  <h2 class="name">Tim Draper</h2>
+                  <p class="description">Renowned Venture Capitalist Billionaire Investor in Tesla, SpaceX, Twitter, Robinhood, Baidu, Skype & others</p>
+                </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+
+                <div class="card-image">
+                    <img src="https://i.ibb.co/s1r0f52/Group-176.png" alt="" class="card-img">
+                </div>
+            </div>
+
+            <div class="card-content">
+                <h2 class="name">The Honorable Ban Ki-Moon</h2>
+                <p class="description">Secretary General, United Nations & Former Foreign Minister, Republic of Korea</p>
+            </div>
+          </div>
+
+        <div class="card swiper-slide">
+          <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                  <img src="https://i.ibb.co/26gYcsz/Mask-group-2.png" alt="" class="card-img">
+              </div>
+          </div>
+
+          <div class="card-content">
+              <h2 class="name">Adam D'Angelon</h2>
+              <p class="description">Former CTO of Facebook CEO & Co-Founder of Quora Board Member of Instagram & OpenAI</p>
+          </div>
+        </div>
+
+
+    <div class="card swiper-slide">
+      <div class="image-content">
+          <span class="overlay"></span>
+
+          <div class="card-image">
+              <img src="https://i.ibb.co/3psY8Kf/Mask-group-1.png" alt="" class="card-img">
+          </div>
+      </div>
+
+      <div class="card-content">
+          <h2 class="name">Justin Kan</h2>
+          <p class="description">Co-Founder of Twitch Former Partner at Y Combinator</p>
+      </div>
+    </div>
+
+    <div class="card swiper-slide">
+      <div class="image-content">
+          <span class="overlay"></span>
+
+          <div class="card-image">
+              <img src="https://i.ibb.co/fpGz78z/Mask-group.png" alt="" class="card-img">
+          </div>
+      </div>
+
+      <div class="card-content">
+          <h2 class="name">Joseph Lubin</h2>
+          <p class="description">Founder, ConsenSys Co-Founder, Ethereum</p>
+      </div>
+    </div>
+
+          </div>
+      </div>
+
+      <div class="swiper-button-next swiper-navBtn"></div>
+      <div class="swiper-button-prev swiper-navBtn"></div>
+      <div class="swiper-pagination"></div>
+  </div>
+		<!-- <div class="container">
 			<center>
 				<main
 					class="past-speakers-grid"
@@ -677,7 +933,7 @@
 					</article>
 				</main>
 			</center>
-		</div>
+		</div> -->
 
 		<br /><br />
 		<br /><br />
@@ -894,20 +1150,57 @@
 			</div>
 		</div>
 
-		<script
-			src="https://code.jquery.com/jquery-3.6.0.js"
-			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-			crossorigin="anonymous"
-		></script>
-		<script>
-			$(function () {
-				$(".item").slice(0, 4).show(); // select the first ten
-				$("#load").click(function (e) {
-					// click event for load more
-					e.preventDefault();
-					$(".item:hidden").slice(0, 4).show(); // select next 10 hidden divs and show them
-				});
-			});
-		</script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.6/swiper-bundle.min.js" integrity="sha512-CGsqPVUZUUVx5RS41AFdu5Ghj3cKcpHxg7ae66br18nqK5dTPJ2k6srKYVHMMIvaq96QIoOE8JrqXrlWuppfEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
+  <script>
+
+
+ $(function() {
+  $(".item").slice(0, 4).show(); // select the first ten
+  $("#load").click(function(e) { // click event for load more
+    e.preventDefault();
+    $(".item:hidden").slice(0, 4).show(); // select next 10 hidden divs and show them
+    
+  });
+});
+
+ 
+var swiper = new Swiper(".slide-content", {
+    slidesPerView: 3,
+    spaceBetween: 25,
+    loop: true,
+    centerSlide: 'true',
+    fade: 'true',
+    grabCursor: 'true',
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints:{
+        0: {
+            slidesPerView: 1,
+        },
+        520: {
+            slidesPerView: 2,
+        },
+        950: {
+            slidesPerView: 3,
+        },
+    },
+  });
+
+</script>
+
 	</body>
 </html>
