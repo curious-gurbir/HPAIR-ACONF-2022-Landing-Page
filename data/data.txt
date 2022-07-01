@@ -1,0 +1,3 @@
+﻿Speaker Name,Speaker Title,Speaker Image,Speaker Logo,Status
+Raghav Bansal,Director Marketing & Communications,https://imgur.com/VkjUKkk,https://imgur.com/U2uaQOu,checked
+Gurbir Dhaliwal,Director Design,https://imgur.com/znEchn8,https://imgur.com/csKjJgJ,checked
