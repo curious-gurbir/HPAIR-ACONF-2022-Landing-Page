@@ -14,35 +14,9 @@ $(document).ready(function () {
 				speaker.logo
 			);
 		});
+		$(".item").slice(0, 4).show();
 	});
 });
-
-// function addCurrentSpeaker(name, title, image, logo, status) {
-// 	if (status.toString().toLowerCase() != "true") return;
-// 	$(".speakers-grid").html(
-// 		$(".speakers-grid").html() +
-// 			`<article class="item">
-//                 <img
-//                     class="speaker-image"
-//                     src="${
-// 						image.includes(".jpg") || image.includes(".png")
-// 							? image
-// 							: image + ".jpg"
-// 					}"
-//                     alt="Speaker Image"
-//                 />
-//                 <div class="speakers-text">
-//                     <span class="speaker-name">${name}</span>
-//                     <span class="speaker-title">${title}</span>
-//                 </div>
-//                 <img class="speaker-logo" src="${
-// 					logo.includes(".jpg") || logo.includes(".png")
-// 						? logo
-// 						: logo + ".png"
-// 				}">
-//             </article>`
-// 	);
-// }
 
 function addCurrentSpeaker(name, title, status, logo) {
 	if (status.toString().toLowerCase() != "true") return;

@@ -72,9 +72,9 @@
 				display: inline-block;
 			}
 			@media (max-width: 640px) {
-				/* .speakers-grid > article {
+				.speakers-grid > article {
 					display: none;
-				} */
+				}
 			}
 			#load {
 				padding: 20px;
@@ -91,9 +91,9 @@
 				transition: 0.5s ease-in-out;
 				text-decoration: none;
 			}
-			#load {
+			/* #load {
 				display: none;
-			}
+			} */
 			@media (min-width: 640px) {
 				#load {
 					display: none;
@@ -127,7 +127,7 @@
 	</body>
 	<script>
 		$(function () {
-			$(".item:hidden").slice(0, 4).show(); // select next 10 hidden divs and show them
+			// $(".item").slice(0, 4).show(); // select next 10 hidden divs and show them
 			$("#load").click(function (e) {
 				// click event for load more
 				e.preventDefault();
