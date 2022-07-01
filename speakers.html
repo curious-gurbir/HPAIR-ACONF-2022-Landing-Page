@@ -29,6 +29,10 @@
 			}
 			.speakers-grid {
 				width: 90vw;
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+				grid-gap: 30px;
+				align-items: start;
 			}
 			.speakers-grid > article img:first-of-type {
 				width: 25vmin;
@@ -71,9 +75,28 @@
 				max-width: 80%;
 				display: inline-block;
 			}
+			@media (max-width: 900px) {
+				.speakers-grid {
+					grid-template-columns: repeat(
+						auto-fill,
+						minmax(200px, 1fr)
+					);
+				}
+			}
 			@media (max-width: 640px) {
 				.speakers-grid > article {
 					display: none;
+				}
+			}
+			@media (max-width: 590px) {
+				.speaker-logo {
+					max-width: 50%;
+				}
+				.speakers-grid {
+					grid-template-columns: repeat(
+						auto-fill,
+						minmax(180px, 1fr)
+					);
 				}
 			}
 			#load {
@@ -106,18 +129,7 @@
 			<h1>OUR SPEAKERS</h1>
 			<br />
 			<br />
-			<main
-				class="speakers-grid"
-				style="
-					display: grid;
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(250px, 1fr)
-					);
-					grid-gap: 30px;
-					align-items: start;
-				"
-			></main>
+			<main class="speakers-grid"></main>
 			<br />
 			<br />
 			<div>
@@ -131,7 +143,7 @@
 			$("#load").click(function (e) {
 				// click event for load more
 				e.preventDefault();
-				$(".item:hidden").slice(0, 4).show(); // select next 10 hidden divs and show them
+				$(".item:hidden").slice(0, 8).show(); // select next 10 hidden divs and show them
 			});
 		});
 	</script>

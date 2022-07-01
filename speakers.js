@@ -14,7 +14,7 @@ $(document).ready(function () {
 				speaker.logo
 			);
 		});
-		$(".item").slice(0, 4).show();
+		$(".item").slice(0, 8).show();
 	});
 });
 
