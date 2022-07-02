@@ -99,6 +99,32 @@
 					);
 				}
 			}
+			@media (max-width: 440px) {
+				.speakers-grid {
+					grid-template-columns: repeat(
+						auto-fill,
+						minmax(140px, 1fr)
+					);
+				}
+			}
+			@media (max-width: 380px) {
+				.speakers-grid {
+					grid-template-columns: repeat(
+						auto-fill,
+						minmax(100px, 1fr)
+					);
+				}
+				.speakers-grid > article img:first-of-type {
+					min-width: 40vmin;
+					min-height: 40vmin;
+				}
+				.speaker-name {
+					font-size: 18px;
+				}
+				.speaker-title {
+					font-size: 14px;
+				}
+			}
 			#load {
 				padding: 20px;
 				border-radius: 20px;
@@ -136,6 +162,7 @@
 				<a href="#" id="load">Load More</a>
 			</div>
 		</center>
+		<br /><br />
 	</body>
 	<script>
 		$(function () {
