@@ -196,84 +196,201 @@
 				padding: 20px;
 			}
 
-			/** features section styling **/
-			.features-col-text {
-				height: 20em;
+			main h1,
+			h2 {
+				font-weight: 600;
+				color: hsl(234, 12%, 34%);
 			}
-			.features-grid-flex {
-				display: -webkit-box;
-				display: -webkit-flex;
-				display: -ms-flexbox;
+
+			main p {
+				color: hsl(229, 6%, 66%);
+			}
+
+			header {
+				margin: 80px 30px 75px;
+				text-align: center;
+			}
+
+			header > h1 {
+				margin: 20px 0;
+				font-weight: 200;
+			}
+
+			header > h1 strong {
+				font-weight: 600;
+			}
+
+			header > p {
+				max-width: 520px;
+				margin: auto;
+			}
+
+			@media (max-width: 443px) {
+				header > h1 {
+					font-size: 1.6em;
+				}
+			}
+
+			/*
+ * ## Cards Container Class
+ */
+
+			.cards-container {
+				/* List Styling Clean-Up */
+				list-style: none;
+				padding: 0;
+				margin: 0;
+
+				/* Alignment */
+				margin: auto;
+			}
+
+			/*
+ * ### Responsive Layout Rules
+ */
+
+			/* When viewport width is equal or greater than 788 pixels,
+ * the cards container will fix its width and will append the
+ * clear fix pseudo-class to avoid float property issues.
+ *
+ * The width will depend from the current viewport width.
+ * If is greater than 1166 pixels, will be 1106 pixels.
+ * Else, then will be 728 pixels.
+ */
+
+			@media (min-width: 788px) {
+				.cards-container {
+					width: 728px;
+				}
+				/* Clear Fix */
+				.cards-container::after {
+					content: "";
+					clear: both;
+					display: table;
+				}
+			}
+
+			@media (min-width: 1166px) {
+				.cards-container {
+					width: 1106px;
+				}
+			}
+
+			/*
+ * ## Feature Card Class
+ */
+
+			[class$="feature-card"] {
+				/* Positioning and Sizing */
+				position: relative;
+				box-sizing: border-box;
+				width: 350px;
 				display: flex;
-				-webkit-box-flex: 1;
-				-webkit-flex-grow: 1;
-				-ms-flex-positive: 1;
-				flex-grow: 1;
-				flex-direction: row;
-				-webkit-flex-direction: row;
-				flex-wrap: wrap;
-				-webkit-flex-wrap: wrap;
-				justify-content: space-around;
-				-webkit-justify-content: space-around;
-			}
-			.features-col {
-				-webkit-box-flex: 1;
-				-webkit-flex: 1;
-				-ms-flex: 1;
-				flex: 1;
-			}
-			.features-col-left {
-				-webkit-box-ordinal-group: -1;
-				-webkit-order: -1;
-				-ms-flex-order: -1;
-				order: -1;
-			}
-			.features-col-text {
-				display: flex;
-				align-items: center;
+				flex-direction: column;
 				justify-content: center;
-			}
-			.features-Aligner-item {
-				width: 80%;
-				font-size: 16px;
-				text-align: justify;
-			}
-			.features-Aligner-item ul{
-				font-size: 16px;
-				text-align: justify;
-			}
-			.features-col-image {
-				background-size: cover;
-				background-position: center center;
+				align-items: center;
+				/* height: 250px; */
+
+				/* Alignment */
+				margin: 0;
+				padding: 32px;
+
+				/* Box Details */
+				border-radius: 10px;
+				border-top: solid 5px black;
+				box-shadow: 2px 5px 20px rgb(0, 0, 0, 0.1);
 			}
 
-			@media (max-width: 640px) {
-				.features-grid-flex {
-					height: 40em;
-					display: -webkit-flex;
-					-webkit-flex-direction: column;
-					flex-direction: column;
+			/*
+ * ### Inner Elements
+ */
+
+			[class$="feature-card"] h2,
+			[class$="feature-card"] p {
+				margin: 0;
+			}
+			[class$="feature-card"] h2 {
+				margin-bottom: 10px;
+			}
+
+			[class$="feature-card"] img {
+				/* position: absolute;
+				bottom: 32px;
+				right: 32px; */
+				margin-top: 15px;
+				max-height: 150px;
+				max-width: 90%;
+			}
+
+			/*
+ * ### Top Border Colors Rules
+ */
+
+			[class$="feature-card"][class*="cyan"] {
+				border-color: hsl(180, 62%, 55%);
+			}
+
+			[class$="feature-card"][class*="red"] {
+				border-color: hsl(0, 78%, 62%);
+			}
+
+			[class$="feature-card"][class*="orange"] {
+				border-color: hsl(34, 97%, 64%);
+			}
+
+			[class$="feature-card"][class*="blue"] {
+				border-color: hsl(212, 86%, 64%);
+			}
+
+
+			@media (min-width: 788px) {
+				[class$="feature-card"] {
+					float: left;
 				}
-				.features-col {
-					order: vertical;
+
+				@media (min-width: 1166px) {
+					[class$="feature-card"]:first-child {
+						margin: 140px 0;
+					}
+
+					[class$="feature-card"]:nth-child(2),
+					[class$="feature-card"]:nth-child(3) {
+						margin: 0 22px;
+					}
+
+					[class$="feature-card"]:last-child {
+						margin-top: -110px;
+					}
+
+					[class$="feature-card"]:nth-child(3) {
+						margin-top: 30px;
+					}
 				}
-				.features-col-left {
-					-webkit-box-ordinal-group: 0;
-					-webkit-order: 0;
-					-ms-flex-order: 0;
-					order: 0;
-				}
-				.features-col-text div p {
-					padding: 1em;
-				}
-				.features-Aligner-item {
-					width: 90%;
-				}
-				.speakers-grid > article {
-					display: none;
+
+				@media (max-width: 1165px) {
+					[class$="feature-card"]:nth-child(3),
+					[class$="feature-card"]:nth-child(4) {
+						margin-top: 30px;
+					}
+
+					[class$="feature-card"]:nth-child(2),
+					[class$="feature-card"]:nth-child(4) {
+						margin-left: 28px;
+					}
 				}
 			}
 
+			@media (max-width: 787px) {
+				[class$="feature-card"] {
+					width: fit-content;
+					height: fit-content;
+					margin: auto;
+				}
+
+				[class$="feature-card"]:not(:first-child) {
+					margin-top: 22px;
+				}
+			}
 			.theme {
 				margin: 0 120px;
 			}
@@ -410,11 +527,97 @@
 					display: none;
 				}
 			}
+
+			.hero-banner img{
+				height: 30%;
+				width: 30%;
+			}
+
+
+			.hero-content h3{
+				color: #00b2b6;
+				background-color: #e5f1f1;
+				width: fit-content;
+
+				padding:0 7px;
+				border-radius: 5px;
+
+			}
+
+			.hero-content p{
+				margin-top: 10px;
+				color: #929292;
+			}
+
+			@media (max-width: 640px) {
+				.hero-banner img{
+				height: 60%;
+				width: 60%;
+			}
+			.hero-content h3{
+				color: #00b2b6;
+				background-color: #e5f1f1;
+				width: fit-content;
+				font-size: 16px;
+				padding:0 7px;
+				border-radius: 5px;
+
+			}
+
+			.hero-content p{
+				font-size: 14px;
+				margin-top: 10px;
+				color: #929292;
+			}
+			}
+			.hero-button a{
+				font-size: 18px;
+				background-color: #00ab84;
+				color: white;
+				text-decoration: none;
+				padding: 10px 15px;
+				border-radius: 50px;
+			}
+			.hero-button a:hover{
+				font-size: 18px;
+				background-color: #034d3c;
+				color: white;
+				text-decoration: none;
+				padding: 10px 15px;
+				border-radius: 50px;
+				transition: 0.5s ease-in-out;
+			}
+			.hero-date{
+				font-size: 22px;
+			}
 		</style>
 	</head>
 	<body>
 		<br /><br />
-		<br /><br />
+
+		<center>
+
+			<div class="row">
+				<div class="col">
+					<div class="hero-banner">
+						<img src="https://i.ibb.co/L6d4Jgt/Group-302.png">
+					</div>
+					<div class="hero-content">
+						<h3>HPAIR ASIA CONFERENCE - INDIA 2022</h3>
+						<p>The Premier Summit for the World's Next<br>Generation of Leaders</p>
+					</div><br><br>
+					<div class="hero-button">
+						<a href="https://my.hpair.org/">Apply Now</a>
+					</div><br>
+					<div class="hero-date">
+						20-24 Aug, 2022
+					</div>
+				</div>
+			</div>
+
+		</center>
+
+		<br><br>
 
 		<center>
 			<h5 style="color: grey">THEME</h5>
@@ -640,133 +843,63 @@
 
 		<center><h1>FEATURES</h1></center>
 		<br />
-		<section>
-			<div class="features-grid-flex">
-				<div
-					class="features-col features-col-image"
-					style="
-						background-image: url(https://i.ibb.co/Cm600Yx/Capture.png);
-						background-size: contain;
-						background-repeat: no-repeat;
-					"
-				>
-					&nbsp;
-				</div>
-				<div class="features-col features-col-text features-col-left">
-					<div class="features-Aligner-item">
-						<h3>Exclusive Network</h3>
-						<p>
-							Networking is very important in today's time, but a pandemic hit 
-							and everything came to a halt. We know you'll tell, we had digital 
-							ways of connecting but the impact that in person meets create is 
-							magical and lasts forever. HPAIR is giving you a mega opportunity 
-							to connect in person with global leaders and craft your own ways. 
-							It's your time to do things differently!
-						</p>
-						<ul>
-							<li>Strengthen business connections.</li>
-							<li>Get access to job opportunities.</li>
-							<li>Gain more knowledge.</li>
-							<li>Understand different perspectives.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<br><br><br><br>
-			<div class="features-grid-flex">
-				<div
-					class="features-col features-col-image"
-					style="
-						background-image: url(https://i.ibb.co/BPMq03W/Group-175.jpg);
-						background-size: contain;
-						background-repeat: no-repeat;
-					"
-				>
-					&nbsp;
-				</div>
-				<div class="features-col features-col-text">
-					<div class="features-Aligner-item">
-						<h3>Knowledge Sessions</h3>
-						<p>
-							Knowledge has a beginning but no end! HPAIR will give you 
+		<main>
+			<ul class="cards-container">
+				<li class="cyan-feature-card">
+					<h2>Exclusive Network</h2>
+					<p>
+						Networking is very important in today's time, but a
+						pandemic hit and everything came to a halt. Find your select
+						community to be the architect of change
+					</p>
+					<img
+						src="https://i.ibb.co/Cm600Yx/Capture.png"
+						alt="supervisor feature icon"
+					/>
+				</li>
+
+				<li class="red-feature-card">
+					<h2>Knowledge Sessions</h2>
+					<p>
+						Knowledge has a beginning but no end! HPAIR will give you 
 							opportunities to spark that curiosity, ignite the fires 
-							within and will force you to think, act and reflect. 
-							These knowledge sessions are so powerful not only with 
-							delegates, but you'll have global leaders sharing stories, 
-							their hurdles, and how they have achieved to become a brand 
-							today that we all vision for ourselves.
-						</p>
-						<ul>
-							<li>Fireside chat: Take this opportunity to deep dive and learn from their life.</li>
-							<li>Panel discussions: Culmination of different perspectives on multidisciplinary topics where you get to hear 2-3 speakers in a panel set up.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<br><br><br><br>
-			<div class="features-grid-flex">
-				<div
-					class="features-col features-col-image"
-					style="
-						background-image: url(https://i.ibb.co/PmQMXPq/image-73.jpg);
-						background-size: contain;
-						background-repeat: no-repeat;
-					"
-				>
-					&nbsp;
-				</div>
-				<div class="features-col features-col-text features-col-left">
-					<div class="features-Aligner-item">
-						<h3>Impact Challenge</h3>
-						<p>
-							The word gives it all, if you can make an impact accept the challenge. 
-							If you have that urge to get up and provide the solution for the on-going 
-							issues in our continent. Come and let's uplift the world together and 
-							the rewards will be yours.
-						</p>
-						<ul>
-							<i class="fa-solid fa-square-check"></i>Team size of 5 | Case study based</li>
-							<li>Internship opportunities, one meal with senior team of the organization for winning delegates</li>
-							<li>We are happy to announce our partners for this event are Invest India and Samagra.</li>
-						</ul>
-						<p>
-							Make an impact that can change the world!
-						</p>
-					</div>
-				</div>
-			</div>
-			<br><br><br><br>
-			<div class="features-grid-flex">
-				<div
-					class="features-col features-col-image"
-					style="
-						background-image: url(https://i.ibb.co/SwPnyPV/Group-249.png);
-						background-size: contain;
-						background-repeat: no-repeat;
-					"
-				>
-					&nbsp;
-				</div>
-				<div class="features-col features-col-text">
-					<div class="features-Aligner-item">
-						<h3>Cultural Exchange</h3>
-						<p>
-							The word "culture" derived from a French term,  
+							within and will force you to think, act and reflect.
+					</p>
+					<img
+						src="https://i.ibb.co/BPMq03W/Group-175.jpg"
+						alt="supervisor feature icon"
+					/>
+				</li>
+
+				<li class="orange-feature-card">
+					<h2>Impact Challenge</h2>
+					<p>
+            The word gives it all, if you can make an impact accept the challenge. 
+            If you have that urge to get up and provide the solution for the on-going 
+            issues in our continent. Come and let's uplift the world together and 
+            the rewards will be yours.
+					</p>
+					<img
+						src="https://i.ibb.co/PmQMXPq/image-73.jpg"
+						alt="supervisor feature icon"
+					/>
+				</li>
+
+				<li class="blue-feature-card">
+					<h2>Cultural Exchange</h2>
+					<p>
+						The word "culture" derived from a French term,  
 							"colere," means to tend to the earth and grow, cultivate 
 							and nurture! That's what HPAIR cultural exchange believes 
 							and visions for each one of us. 
-							<ul>
-								<li>Network with delegates from 40+ countries </li>
-								<li>Connect at our Desi & International night</li>
-								<li>Highlight the beauty of diversity</li>
-								<li>Moreover cultural exchange shows the importance of similarities rather than differences!</li>
-							</ul>
-						</p>
-						<p>So be ready to tune and learn from each other's cultures! </p>						
-					</div>
-				</div>
-			</div>
-		</section>
+					</p>
+					<img
+						src="https://i.ibb.co/SwPnyPV/Group-249.png"
+						alt="supervisor feature icon"
+					/>
+				</li>
+			</ul>
+		</main>
 
 		<br /><br />
 		<br /><br />
