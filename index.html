@@ -11,7 +11,13 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+			integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
@@ -60,9 +66,10 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
-		
+
 		<script src="js/iframeResizer.contentWindow.min.js"></script>
 		<script defer src="speakers.js"></script>
+		<script defer src="faqs.js"></script>
 		<title>Landing Page</title>
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
@@ -72,8 +79,8 @@
 				box-sizing: border-box;
 				font-family: "Poppins", sans-serif;
 			}
-			
-			body{
+
+			body {
 				overflow-x: hidden;
 			}
 
@@ -270,7 +277,6 @@
 				border-color: hsl(212, 86%, 64%);
 			}
 
-
 			@media (min-width: 788px) {
 				[class$="feature-card"] {
 					float: left;
@@ -456,49 +462,46 @@
 				}
 			}
 
-			.hero-banner img{
+			.hero-banner img {
 				height: 30%;
 				width: 30%;
 			}
 
-
-			.hero-content h3{
+			.hero-content h3 {
 				color: #00b2b6;
 				background-color: #e5f1f1;
 				width: fit-content;
 
-				padding:0 7px;
+				padding: 0 7px;
 				border-radius: 5px;
-
 			}
 
-			.hero-content p{
+			.hero-content p {
 				margin-top: 10px;
 				color: #929292;
 			}
 
 			@media (max-width: 640px) {
-				.hero-banner img{
-				height: 60%;
-				width: 60%;
-			}
-			.hero-content h3{
-				color: #00b2b6;
-				background-color: #e5f1f1;
-				width: fit-content;
-				font-size: 16px;
-				padding:0 7px;
-				border-radius: 5px;
+				.hero-banner img {
+					height: 60%;
+					width: 60%;
+				}
+				.hero-content h3 {
+					color: #00b2b6;
+					background-color: #e5f1f1;
+					width: fit-content;
+					font-size: 16px;
+					padding: 0 7px;
+					border-radius: 5px;
+				}
 
+				.hero-content p {
+					font-size: 14px;
+					margin-top: 10px;
+					color: #929292;
+				}
 			}
-
-			.hero-content p{
-				font-size: 14px;
-				margin-top: 10px;
-				color: #929292;
-			}
-			}
-			.hero-button a{
+			.hero-button a {
 				font-size: 18px;
 				background-color: #00ab84;
 				color: white;
@@ -506,7 +509,7 @@
 				padding: 10px 15px;
 				border-radius: 50px;
 			}
-			.hero-button a:hover{
+			.hero-button a:hover {
 				font-size: 18px;
 				background-color: #034d3c;
 				color: white;
@@ -515,11 +518,11 @@
 				border-radius: 50px;
 				transition: 0.5s ease-in-out;
 			}
-			.hero-date{
+			.hero-date {
 				font-size: 22px;
 			}
 
-			.ticket-card-container{
+			.ticket-card-container {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -527,7 +530,7 @@
 				flex-wrap: wrap;
 			}
 
-			.ticket-card{
+			.ticket-card {
 				width: 400px;
 				height: auto;
 				position: relative;
@@ -536,12 +539,12 @@
 				flex-direction: column;
 				border-radius: 20px;
 				border: 1px solid gray;
-				transition: all .3s ease-in;
+				transition: all 0.3s ease-in;
 			}
-			.ticket-card > *{
+			.ticket-card > * {
 				padding: 10px;
 			}
-			.ticket-card .ticket-card-title{
+			.ticket-card .ticket-card-title {
 				padding: 20px 10px;
 				width: 100%;
 				text-align: center;
@@ -550,14 +553,14 @@
 				border-top-left-radius: 20px;
 				border-top-right-radius: 20px;
 			}
-			.ticket-card:nth-child(1):hover{
-				box-shadow: 0 0 200px rgba(33,33,33,.2);
+			.ticket-card:nth-child(1):hover {
+				box-shadow: 0 0 200px rgba(33, 33, 33, 0.2);
 			}
-			.ticket-card:nth-child(2):hover{
-				box-shadow: 0 0 200px rgba(33,33,33,.2);
+			.ticket-card:nth-child(2):hover {
+				box-shadow: 0 0 200px rgba(33, 33, 33, 0.2);
 			}
 
-			.ticket-card .ticket-card-text{
+			.ticket-card .ticket-card-text {
 				line-height: 20px;
 				font-size: 400;
 			}
@@ -614,7 +617,6 @@
 					grid-template-columns: repeat(
 						auto-fill,
 						minmax(200px, 1fr)
-						
 					);
 					display: none;
 				}
@@ -689,15 +691,72 @@
 			}
 
 			@media (min-width: 640px) {
-				.timeline-mob{
+				.timeline-mob {
 					display: none;
 				}
 			}
 
 			@media (max-width: 640px) {
-				.timeline-web{
+				.timeline-web {
 					display: none;
 				}
+			}
+			.faq-container {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+			}
+			.faq-hr-line {
+				width: 60%;
+				margin: auto;
+			}
+			/* Style the buttons that are used to open and close the faq-question body */
+			.faq-question {
+				/* background-color: #eee; */
+				color: #444;
+				cursor: pointer;
+				padding: 30px 20px;
+				width: 60%;
+				border: none;
+				outline: none;
+				transition: 0.4s;
+				margin: auto;
+			}
+			.faq-body {
+				margin: auto;
+				/* text-align: center; */
+				width: 50%;
+				padding: auto;
+			}
+			.faq-body p {
+				padding: 20px 0;
+			}
+			/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+			.active,
+			.faq-question:hover {
+				background-color: #f9f9f9;
+			}
+			/* Style the faq-question panel. Note: hidden by default */
+			.faq-body {
+				padding: 0 18px;
+				background-color: white;
+				display: none;
+				overflow: hidden;
+			}
+			.faq-question:after {
+				content: "\02795";
+				/* Unicode character for "plus" sign (+) */
+				font-size: 13px;
+				color: #777;
+				float: right;
+				margin-left: 5px;
+			}
+			.active:after {
+				content: "\2796";
+				/* Unicode character for "minus" sign (-) */
+			}
+			.faq-container hr:last-child {
+				display: none;
 			}
 		</style>
 	</head>
@@ -707,40 +766,45 @@
 		<!--HERO SECTION BEGINS-->
 
 		<center>
-
 			<div class="row">
 				<div class="col">
 					<div class="hero-banner">
-						<img src="https://i.ibb.co/L6d4Jgt/Group-302.png">
+						<img src="https://i.ibb.co/L6d4Jgt/Group-302.png" />
 					</div>
 					<div class="hero-content">
 						<h3>HPAIR ASIA CONFERENCE - INDIA 2022</h3>
-						<p>The Premier Summit for the World's Next<br>Generation of Leaders</p>
-					</div><br><br>
+						<p>
+							The Premier Summit for the World's Next<br />Generation
+							of Leaders
+						</p>
+					</div>
+					<br /><br />
 					<!-- <div class="hero-button">
 						<a href="https://my.hpair.org/">Apply Now</a>
 					</div><br> -->
-					<div class="hero-date">
-						20-24 Aug, 2022
-					</div>
+					<div class="hero-date">20-24 Aug, 2022</div>
 				</div>
 			</div>
-
 		</center>
 
 		<!--HERO SECTION ENDS-->
 
-		<br><br>
+		<br /><br />
 
 		<!--BRAND SECTION BEGINS-->
 
 		<div class="container">
-
-		<center><img src="./Group 179.jpg" alt="Group-179" border="0" style="height: 100%; width: 100%;"></center>
+			<center>
+				<img
+					src="./Group 179.jpg"
+					alt="Group-179"
+					border="0"
+					style="height: 100%; width: 100%"
+				/>
+			</center>
 		</div>
 
 		<!--BRAND SECTION ENDS-->
-
 
 		<!--THEME SECTION BEGINS-->
 		<center>
@@ -759,7 +823,6 @@
 		<br /><br />
 		<br /><br />
 
-
 		<!--OUR SPEAKERS SECTION BEGINS-->
 
 		<center><h1>OUR SPEAKERS</h1></center>
@@ -767,15 +830,14 @@
 		<div class="container blogBox moreBox" id="myList">
 			<center>
 				<main class="speakers-grid"></main>
-			<br />
-			<br />
-			<div>
-				<a href="#" id="load">Load More</a>
-			</div>
+				<br />
+				<br />
+				<div>
+					<a href="#" id="load">Load More</a>
+				</div>
 			</center>
 		</div>
 
-		
 		<br /><br />
 
 		<!--OUR SPEAKERS SECTION ENDS-->
@@ -792,8 +854,8 @@
 					<h2>Exclusive Network</h2>
 					<p>
 						Networking is very important in today's time, but a
-						pandemic hit and everything came to a halt. Find your select
-						community to be the architect of change
+						pandemic hit and everything came to a halt. Find your
+						select community to be the architect of change
 					</p>
 					<img
 						src="https://i.ibb.co/Cm600Yx/Capture.png"
@@ -804,9 +866,10 @@
 				<li class="red-feature-card">
 					<h2>Knowledge Sessions</h2>
 					<p>
-						Knowledge has a beginning but no end! HPAIR will give you 
-							opportunities to spark that curiosity, ignite the fires 
-							within and will force you to think, act and reflect.
+						Knowledge has a beginning but no end! HPAIR will give
+						you opportunities to spark that curiosity, ignite the
+						fires within and will force you to think, act and
+						reflect.
 					</p>
 					<img
 						src="https://i.ibb.co/BPMq03W/Group-175.jpg"
@@ -817,10 +880,11 @@
 				<li class="orange-feature-card">
 					<h2>Impact Challenge</h2>
 					<p>
-            The word gives it all, if you can make an impact accept the challenge. 
-            If you have that urge to get up and provide the solution for the on-going 
-            issues in our continent. Come and let's uplift the world together and 
-            the rewards will be yours.
+						The word gives it all, if you can make an impact accept
+						the challenge. If you have that urge to get up and
+						provide the solution for the on-going issues in our
+						continent. Come and let's uplift the world together and
+						the rewards will be yours.
 					</p>
 					<img
 						src="https://i.ibb.co/PmQMXPq/image-73.jpg"
@@ -831,10 +895,10 @@
 				<li class="blue-feature-card">
 					<h2>Cultural Exchange</h2>
 					<p>
-						The word "culture" derived from a French term,  
-							"colere," means to tend to the earth and grow, cultivate 
-							and nurture! That's what HPAIR cultural exchange believes 
-							and visions for each one of us. 
+						The word "culture" derived from a French term, "colere,"
+						means to tend to the earth and grow, cultivate and
+						nurture! That's what HPAIR cultural exchange believes
+						and visions for each one of us.
 					</p>
 					<img
 						src="https://i.ibb.co/SwPnyPV/Group-249.png"
@@ -844,15 +908,11 @@
 			</ul>
 		</main>
 
-
 		<!--FEATURES SECTION ENDS-->
-
-
 
 		<br /><br />
 		<br /><br />
 		<br />
-
 
 		<!--PAST SPEAKERS SECTION BEGINS-->
 
@@ -1161,165 +1221,620 @@
 		</div> -->
 
 		<!--PAST SPEAKERS SECTION ENDS-->
-		
-		<br /><br />
-		<br /><br />
 
+		<br /><br />
+		<br /><br />
 
 		<!--TICKET SECTION BEGINS-->
-		<center><h1>GET YOUR TICKET NOW</h1></center><br>
+		<center><h1>GET YOUR TICKET NOW</h1></center>
+		<br />
 		<div class="ticket-card-container">
 			<div class="ticket-card">
-				<div class="ticket-card-title"  style="background: linear-gradient(to right, #a2eff1, #056e70);"><h1 style="font-weight: 500; color: white; margin-top: -10px; margin-bottom: 10px;">IN-PERSON</h1>
-					<br><h5 style="margin-top: -40px; color: white; font-weight: 200; font-size: 16px;">Full Experience In-Person</h5>
+				<div
+					class="ticket-card-title"
+					style="
+						background: linear-gradient(to right, #a2eff1, #056e70);
+					"
+				>
+					<h1
+						style="
+							font-weight: 500;
+							color: white;
+							margin-top: -10px;
+							margin-bottom: 10px;
+						"
+					>
+						IN-PERSON
+					</h1>
+					<br />
+					<h5
+						style="
+							margin-top: -40px;
+							color: white;
+							font-weight: 200;
+							font-size: 16px;
+						"
+					>
+						Full Experience In-Person
+					</h5>
 				</div>
-				
-				<center><div class="ticket-card-text" style="justify-content: center; align-items: center; margin-top: 20px;">
-					<h1 style="font-size: 48px;">$595</h1>
-					<h4 style="margin: 30px 10px 20px 10px; font-weight: 100; font-size: 14px; color: grey;">Selective application and screening process for entry
-						into Harvard's premier Asian conference</h4>
-						<hr style="color: grey; width: 90%;">
-				</div></center>
-				<div class="ticket-card-text" style="margin-left: 15px;">
+
+				<center>
+					<div
+						class="ticket-card-text"
+						style="
+							justify-content: center;
+							align-items: center;
+							margin-top: 20px;
+						"
+					>
+						<h1 style="font-size: 48px">$595</h1>
+						<h4
+							style="
+								margin: 30px 10px 20px 10px;
+								font-weight: 100;
+								font-size: 14px;
+								color: grey;
+							"
+						>
+							Selective application and screening process for
+							entry into Harvard's premier Asian conference
+						</h4>
+						<hr style="color: grey; width: 90%" />
+					</div>
+				</center>
+				<div class="ticket-card-text" style="margin-left: 15px">
 					<table>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">In Person ticket includes <b>in-person</b>
-								access to main events like Opening
-								Ceremony, Keynote speakers, fireside
-								chats, panel discussions and closing
-								ceremony</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								In Person ticket includes
+								<b>in-person</b> access to main events like
+								Opening Ceremony, Keynote speakers, fireside
+								chats, panel discussions and closing ceremony
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;"><b>1-on-1 networking</b> with other HPAIR
-								Delegates in Break-out sessions</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								<b>1-on-1 networking</b> with other HPAIR
+								Delegates in Break-out sessions
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Participate <b>in-person</b> in cultural events
-								like international night and desi night</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Participate <b>in-person</b> in cultural events
+								like international night and desi night
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Access to HPAIR <b>alumni networks</b></td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Access to HPAIR <b>alumni networks</b>
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Impact Challenge</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Impact Challenge
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Professional <b>certificate</b> signed by HPAIR
-								Executives</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Professional <b>certificate</b> signed by HPAIR
+								Executives
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Have your resume passed to Speaker
-								Organization & Corporate Sponsors</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Have your resume passed to Speaker Organization
+								& Corporate Sponsors
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Access live speaker Q&AS</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Access live speaker Q&AS
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;"><b>5 Days</b> of 30+ speeches, fireside chats,
-								panels & interviews</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								<b>5 Days</b> of 30+ speeches, fireside chats,
+								panels & interviews
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Access to the exclusive <b>HPAIR
-								Community</b> Facebook/Whatsapp Group</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Access to the exclusive
+								<b>HPAIR Community</b> Facebook/Whatsapp Group
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Additional perks such as experience in
-								New Delhi, welcome kit, merch and more</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Additional perks such as experience in New
+								Delhi, welcome kit, merch and more
+							</td>
 						</tr>
-						<tr style="font-size: 14px; margin-top: 10px; ">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #056e70; border-radius: 100%; padding: 4px; color: #056e70; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Participate in <b>HPAIRx</b> (Forum for delegates
-								to share their stories)</td>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Participate in <b>HPAIRx</b> (Forum for
+								delegates to share their stories)
+							</td>
 						</tr>
 					</table>
-					
 				</div>
 			</div>
 
-
 			<div class="ticket-card">
-				<div class="ticket-card-title"  style="background: linear-gradient(to right, #8196df, #092174);"><h1 style="font-weight: 500; color: white; margin-top: -10px; margin-bottom: 10px;">ONLINE</h1>
-					<br><h5 style="margin-top: -40px; color: white; font-weight: 200; font-size: 16px;">Virtual Experience</h5>
+				<div
+					class="ticket-card-title"
+					style="
+						background: linear-gradient(to right, #8196df, #092174);
+					"
+				>
+					<h1
+						style="
+							font-weight: 500;
+							color: white;
+							margin-top: -10px;
+							margin-bottom: 10px;
+						"
+					>
+						ONLINE
+					</h1>
+					<br />
+					<h5
+						style="
+							margin-top: -40px;
+							color: white;
+							font-weight: 200;
+							font-size: 16px;
+						"
+					>
+						Virtual Experience
+					</h5>
 				</div>
-				
-				<center><div class="ticket-card-text" style="margin-top: 20px; justify-content: center; align-items: center;">
-					<h1 style="font-size: 48px;">$295</h1>
-					<p style="margin: 30px 10px 20px 10px; font-weight: 100; font-size: 14px; color: grey;">Selective application and screening process for entry
-						into Harvard's premier Asian conference</p>
-						<hr style="color: grey; width: 90%;">
-				</div></center>
-				<div class="ticket-card-text" style="margin-left: 15px;">
+
+				<center>
+					<div
+						class="ticket-card-text"
+						style="
+							margin-top: 20px;
+							justify-content: center;
+							align-items: center;
+						"
+					>
+						<h1 style="font-size: 48px">$295</h1>
+						<p
+							style="
+								margin: 30px 10px 20px 10px;
+								font-weight: 100;
+								font-size: 14px;
+								color: grey;
+							"
+						>
+							Selective application and screening process for
+							entry into Harvard's premier Asian conference
+						</p>
+						<hr style="color: grey; width: 90%" />
+					</div>
+				</center>
+				<div class="ticket-card-text" style="margin-left: 15px">
 					<table>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Online ticket includes <b>virtual access</b> to
-								main events like Opening Ceremony,
-								Keynote speakers, fireside chats, panel
-								discussions and closing ceremony</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Online ticket includes <b>virtual access</b> to
+								main events like Opening Ceremony, Keynote
+								speakers, fireside chats, panel discussions and
+								closing ceremony
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;"><b>Virtual Speed Networking</b> with other
-								HPAIR Delegates</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								<b>Virtual Speed Networking</b> with other HPAIR
+								Delegates
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Participate <b>virtually</b> in cultural events like
-								international night and desi night virtually</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Participate <b>virtually</b> in cultural events
+								like international night and desi night
+								virtually
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Access to HPAIR <b>alumni networks</b></td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Access to HPAIR <b>alumni networks</b>
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Impact Challenge</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Impact Challenge
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Professional <b>certificate</b> signed by HPAIR
-								Executives</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Professional <b>certificate</b> signed by HPAIR
+								Executives
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Have your resume passed to Speaker
-								Organization & Corporate Sponsors</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Have your resume passed to Speaker Organization
+								& Corporate Sponsors
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Access live speaker Q&As</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Access live speaker Q&As
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;"><b>5 Days</b> of 30+ speeches, fireside chats,
-								panels & interviews</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								<b>5 Days</b> of 30+ speeches, fireside chats,
+								panels & interviews
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-check" aria-hidden="true" style="border: 2px solid #092174; border-radius: 100%; padding: 4px; color: #092174; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px;">Access to the exclusive <b>HPAIR
-								Community</b> Facebook/Whatsapp Group</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #092174;
+										border-radius: 100%;
+										padding: 4px;
+										color: #092174;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Access to the exclusive
+								<b>HPAIR Community</b> Facebook/Whatsapp Group
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-times" aria-hidden="true" style="border: 2px solid #676769; border-radius: 100%; padding: 5px; color: #676769; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px; color: #676769;">Additional perks such as experience In
-								New Delhi, welcome kit, merch and more</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-times"
+									aria-hidden="true"
+									style="
+										border: 2px solid #676769;
+										border-radius: 100%;
+										padding: 5px;
+										color: #676769;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td
+								style="
+									padding-left: 10px;
+									padding-top: 10px;
+									color: #676769;
+								"
+							>
+								Additional perks such as experience In New
+								Delhi, welcome kit, merch and more
+							</td>
 						</tr>
-						<tr style="font-size: 14px;">
-							<td style="vertical-align: top; padding-top:10px;"><i class="fa fa-times" aria-hidden="true" style="border: 2px solid #676769; border-radius: 100%; padding: 5px; color: #676769; font-size: 8px; font-weight: bolder;"></i></td>
-							<td style="padding-left: 10px; padding-top:10px; color: #676769;">Participate in <b>HPAIRx</b> (Forum for delegates
-								to share their stories)
-								id</td>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-times"
+									aria-hidden="true"
+									style="
+										border: 2px solid #676769;
+										border-radius: 100%;
+										padding: 5px;
+										color: #676769;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td
+								style="
+									padding-left: 10px;
+									padding-top: 10px;
+									color: #676769;
+								"
+							>
+								Participate in <b>HPAIRx</b> (Forum for
+								delegates to share their stories) id
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -1327,28 +1842,44 @@
 		</div>
 		<!--TICKET SECTION ENDS-->
 
-		<br><br>
+		<br /><br />
 
-		<br><br>
+		<br /><br />
 		<!--CONFERENCE TIMELINE BEGINS-->
 		<div class="timeline-container">
 			<center><h1>CONFERENCE TIMELINE</h1></center>
-			<br><br>
+			<br /><br />
 			<center>
-				<img class="timeline-web" src="./Group 309.png" width="80%" height="80%">
-				<img class="timeline-mob" src="./Group 303.png" width="80%" height="80%">
-				
-				
-				</center>
+				<img
+					class="timeline-web"
+					src="./Group 309.png"
+					width="80%"
+					height="80%"
+				/>
+				<img
+					class="timeline-mob"
+					src="./Group 303.png"
+					width="80%"
+					height="80%"
+				/>
+			</center>
 		</div>
 		<!--CONFERENCE TIMELINE ENDS-->
 
-		<br><br>
-		
+		<br /><br /><br />
+
+		<!-- FAQ SECTION BEGINS HERE -->
+		<main>
+			<center>
+				<h1>FAQ'S</h1>
+			</center>
+			<br />
+			<section class="faq-container"></section>
+		</main>
+		<!-- FAQ SECTION ENDS HERE -->
+
 		<script src="js/iframeResizer.contentWindow.min.js"></script>
-		<script defer src="speakers.js"></script>
 		<script>
-			
 			$(function () {
 				$(".item").slice(0, 4).show(); // select the first ten
 				$("#load").click(function (e) {
@@ -1387,8 +1918,6 @@
 					},
 				},
 			});
-
-			
 		</script>
 	</body>
 </html>
