@@ -134,7 +134,6 @@
 				$("#loadingText").show();
 				cropData = cropInstance.tellSelect();
 				const canvas = document.getElementById("canvas");
-				canvas.style.display = "inline-block";
 				const ctx = canvas.getContext("2d");
 				ctx.canvas.width = 1080;
 				ctx.canvas.height = 1080;
@@ -172,6 +171,7 @@
 						ctx.canvas.height
 					);
 					$("#loadingText").hide();
+					canvas.style.display = "inline-block";
 					$("#downloadBtn").show();
 				};
 			}
