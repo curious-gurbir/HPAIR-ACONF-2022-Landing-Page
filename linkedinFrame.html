@@ -57,21 +57,10 @@
 				max-width: 80vw;
 				max-height: 80vh;
 			}
-			#loading {
-				width: 100vw;
-				height: 100vh;
-				position: absolute;
-				top: 0;
-				left: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background-color: rgba(0, 0, 0, 0.7);
-				color: white;
+			#loadingText {
 				font-weight: 600;
 				font-size: 25px;
 				display: none;
-				z-index: 10;
 			}
 			#loadingText::after {
 				content: ".";
@@ -95,7 +84,7 @@
 	<body>
 		<div id="container">
 			<img id="imagePreview" src="" alt="Image Preview" />
-
+			<div id="loadingText">Loading</div>
 			<input
 				type="file"
 				accept="image/gif, image/jpeg, image/jpg, image/png"
@@ -119,7 +108,6 @@
 				Download Image
 			</button>
 		</div>
-		<div id="loading"><div id="loadingText">Loading</div></div>
 		<script>
 			var cropInstance, overlay;
 			var image = document.getElementById("imagePreview");
@@ -143,7 +131,7 @@
 			}
 
 			function cropImage() {
-				$("#loading").show();
+				$("#loadingText").show();
 				cropData = cropInstance.tellSelect();
 				const canvas = document.getElementById("canvas");
 				canvas.style.display = "inline-block";
@@ -166,6 +154,9 @@
 					ctx.canvas.width,
 					ctx.canvas.height
 				);
+				cropInstance.destroy();
+				image.style.display = "none";
+				$("#cropBtn").hide();
 				overlay = new Image();
 				overlay.src = `./images/linkedin-frame/frame.png`;
 				overlay.onload = function () {
@@ -180,12 +171,9 @@
 						ctx.canvas.width,
 						ctx.canvas.height
 					);
-					$("#loading").hide();
+					$("#loadingText").hide();
 					$("#downloadBtn").show();
 				};
-				cropInstance.destroy();
-				image.style.display = "none";
-				$("#cropBtn").hide();
 			}
 
 			function downloadImage() {
