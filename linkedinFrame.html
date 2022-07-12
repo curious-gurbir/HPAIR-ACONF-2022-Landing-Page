@@ -10,7 +10,6 @@
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
-		<!-- <script src="js/iframeResizer.contentWindow.min.js"></script> -->
 		<script src="js/Jcrop/jquery.Jcrop.min.js"></script>
 		<title>LinkedIn Frame Editor</title>
 		<style>
@@ -20,9 +19,6 @@
 				padding: 0;
 				font-family: "Poppins", sans-serif;
 			}
-			/* body {
-				min-height: 800px;
-			} */
 			.btn {
 				padding: 10px 24px;
 				background-color: #1c1c1c;
@@ -33,6 +29,7 @@
 			}
 			#imagePreview {
 				display: none;
+				height: 80vh;
 				max-width: 80vw;
 				max-height: 80vh;
 				margin-bottom: 20px;
@@ -57,6 +54,41 @@
 			}
 			#canvas {
 				display: none;
+				max-width: 80vw;
+				max-height: 80vh;
+			}
+			#loading {
+				width: 100vw;
+				height: 100vh;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: rgba(0, 0, 0, 0.7);
+				color: white;
+				font-weight: 600;
+				font-size: 25px;
+				display: none;
+				z-index: 10;
+			}
+			#loadingText::after {
+				content: ".";
+				animation-name: loadingAnim;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
+			}
+			@keyframes loadingAnim {
+				33% {
+					content: ".";
+				}
+				66% {
+					content: "..";
+				}
+				100% {
+					content: "...";
+				}
 			}
 		</style>
 	</head>
@@ -87,6 +119,7 @@
 				Download Image
 			</button>
 		</div>
+		<div id="loading"><div id="loadingText">Loading</div></div>
 		<script>
 			var cropInstance, overlay;
 			var image = document.getElementById("imagePreview");
@@ -110,12 +143,14 @@
 			}
 
 			function cropImage() {
+				$("#loading").show();
 				cropData = cropInstance.tellSelect();
 				const canvas = document.getElementById("canvas");
 				canvas.style.display = "inline-block";
 				const ctx = canvas.getContext("2d");
-				ctx.canvas.width = cropData.w;
-				ctx.canvas.height = cropData.h;
+				ctx.canvas.width = 1080;
+				ctx.canvas.height = 1080;
+
 				let wMultiplier =
 					image.naturalWidth / parseFloat(image.style.width);
 				let hMultiplier =
@@ -128,8 +163,8 @@
 					cropData.h * hMultiplier,
 					0,
 					0,
-					cropData.w,
-					cropData.h
+					ctx.canvas.width,
+					ctx.canvas.height
 				);
 				overlay = new Image();
 				overlay.src = `./images/linkedin-frame/frame.png`;
@@ -145,6 +180,7 @@
 						ctx.canvas.width,
 						ctx.canvas.height
 					);
+					$("#loading").hide();
 					$("#downloadBtn").show();
 				};
 				cropInstance.destroy();
