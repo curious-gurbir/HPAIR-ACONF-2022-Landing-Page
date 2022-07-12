@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="js/Jcrop/jquery.Jcrop.min.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<script src="js/Jcrop/jquery.Jcrop.min.js"></script>
+		<title>LinkedIn Frame Editor</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: poppins;
+			}
+			.btn {
+				padding: 10px 24px;
+				background-color: #1c1c1c;
+				color: white;
+				border-radius: 8px;
+				white-space: nowrap;
+				border: none;
+			}
+			#imagePreview {
+				display: none;
+				max-width: 80vw;
+				max-height: 80vh;
+				margin-bottom: 20px;
+				border: 2px solid #707070;
+			}
+			#container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				gap: 20px;
+			}
+			#cropBtn {
+				display: none;
+			}
+			#downloadBtn {
+				display: none;
+			}
+			#canvas {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img id="imagePreview" src="" alt="Image Preview" />
+
+			<input
+				type="file"
+				accept="image/gif, image/jpeg, image/jpg, image/png"
+				name="image"
+				id="imageFile"
+				onchange="loadImage(event)"
+				style="display: none"
+			/>
+			<label
+				for="imageFile"
+				class="btn"
+				id="uploadBtn"
+				style="cursor: pointer"
+				>Upload Image</label
+			>
+			<button class="btn" id="cropBtn" onclick="cropImage()">
+				Crop Image
+			</button>
+			<canvas id="canvas"> </canvas>
+			<button class="btn" id="downloadBtn" onclick="downloadImage()">
+				Download Image
+			</button>
+		</div>
+		<script>
+			var cropInstance, overlay;
+			var image = document.getElementById("imagePreview");
+
+			function loadImage(event) {
+				image.src = URL.createObjectURL(event.target.files[0]);
+				image.style.display = "inline-block";
+				$("#uploadBtn").hide();
+				$("#cropBtn").show();
+				$("#imagePreview").Jcrop(
+					{
+						aspectRatio: 1,
+					},
+					function () {
+						cropInstance = this;
+						let bounds = this.getBounds();
+						let smallBound = Math.min(...bounds);
+						this.setSelect([0, 0, smallBound, smallBound]);
+					}
+				);
+			}
+
+			function cropImage() {
+				cropData = cropInstance.tellSelect();
+				const canvas = document.getElementById("canvas");
+				canvas.style.display = "inline-block";
+				const ctx = canvas.getContext("2d");
+				ctx.canvas.width = cropData.w;
+				ctx.canvas.height = cropData.h;
+				let wMultiplier =
+					image.naturalWidth / parseFloat(image.style.width);
+				let hMultiplier =
+					image.naturalHeight / parseFloat(image.style.height);
+				ctx.drawImage(
+					image,
+					cropData.x * wMultiplier,
+					cropData.y * hMultiplier,
+					cropData.w * wMultiplier,
+					cropData.h * hMultiplier,
+					0,
+					0,
+					cropData.w,
+					cropData.h
+				);
+				overlay = new Image();
+				overlay.src = `./images/linkedin-frame/frame.png`;
+				overlay.onload = function () {
+					ctx.drawImage(
+						overlay,
+						0,
+						0,
+						overlay.width,
+						overlay.height,
+						0,
+						0,
+						ctx.canvas.width,
+						ctx.canvas.height
+					);
+					$("#downloadBtn").show();
+				};
+				cropInstance.destroy();
+				image.style.display = "none";
+				$("#cropBtn").hide();
+			}
+
+			function downloadImage() {
+				let link = document.createElement("a");
+				link.download = "HPAIR LinkedIn Frame.png";
+				link.href = document.getElementById("canvas").toDataURL();
+				link.click();
+			}
+		</script>
+	</body>
+</html>
