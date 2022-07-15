@@ -11,13 +11,13 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<link
+		<!-- <link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
 			integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
-		/>
+		/> -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
@@ -354,7 +354,7 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				padding: 10px 14px;
+				/* padding: 10px 14px; */
 			}
 			.image-content {
 				position: relative;
@@ -381,7 +381,7 @@
 			}
 			.overlay::after {
 				border-radius: 0 25px 0 0;
-				background-color: #fff;
+				/* background-color: #fff; */
 			}
 			.card-image {
 				position: relative;
@@ -390,12 +390,24 @@
 				overflow: hidden;
 				padding: 3px;
 			}
+			.card-logo {
+				position: relative;
+				max-height: 50px;
+				width: 80%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/* overflow: hidden; */
+				/* padding: 3px; */
+			}
+			.card-logo .card-logo-img {
+				max-height: 50px;
+				max-width: 80%;
+			}
 			.card-image .card-img {
 				height: 100%;
-				width: 100%;
-				margin-bottom: 20px;
-				transform: scaleY(1.7);
-				transform-origin: top;
+				/* width: 100%; */
+				/* margin-bottom: 20px; */
 			}
 			.name {
 				font-size: 18px;
@@ -1074,16 +1086,26 @@
 		<center><h1>PAST SPEAKERS</h1></center>
 		<div class="slide-container swiper">
 			<div class="slide-content">
-				<div class="card-wrapper swiper-wrapper">
-					<div class="card swiper-slide">
+				<div
+					id="past-speakers-wrapper"
+					class="card-wrapper swiper-wrapper"
+				>
+					<!-- <div class="card swiper-slide">
 						<div class="image-content">
 							<span class="overlay"></span>
 
 							<div class="card-image">
 								<img
-									src="https://i.ibb.co/DRHZshB/Group-164.png"
-									alt=""
+									src="images/past-speaker-images/Aparna Bawa.jpg"
+									alt="Aparna Bawa - COO of Zoom Image"
 									class="card-img"
+								/>
+							</div>
+							<div class="card-logo">
+								<img
+									src="images/past-speaker-logos/Aparna Bawa Logo.png"
+									alt="Aparna Bawa - COO of Zoom logo"
+									class="card-logo-img"
 								/>
 							</div>
 						</div>
@@ -1246,7 +1268,7 @@
 								Founder, ConsenSys Co-Founder, Ethereum
 							</p>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -1679,6 +1701,25 @@
 								delegates to share their stories)
 							</td>
 						</tr>
+						<tr style="font-size: 14px; margin-top: 10px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-check"
+									aria-hidden="true"
+									style="
+										border: 2px solid #056e70;
+										border-radius: 100%;
+										padding: 4px;
+										color: #056e70;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td style="padding-left: 10px; padding-top: 10px">
+								Includes <b>4 day lunch</b>
+							</td>
+						</tr>
 					</table>
 				</div>
 			</div>
@@ -1989,6 +2030,31 @@
 							>
 								Participate in <b>HPAIRx</b> (Forum for
 								delegates to share their stories) id
+							</td>
+						</tr>
+						<tr style="font-size: 14px">
+							<td style="vertical-align: top; padding-top: 10px">
+								<i
+									class="fa fa-times"
+									aria-hidden="true"
+									style="
+										border: 2px solid #676769;
+										border-radius: 100%;
+										padding: 5px;
+										color: #676769;
+										font-size: 8px;
+										font-weight: bolder;
+									"
+								></i>
+							</td>
+							<td
+								style="
+									padding-left: 10px;
+									padding-top: 10px;
+									color: #676769;
+								"
+							>
+								Includes <b>4 day lunch</b>
 							</td>
 						</tr>
 					</table>
