@@ -785,7 +785,7 @@
 						select community to be the architect of change
 					</p>
 					<img
-						src="https://imgur.com/DlriMwQ.jpg"
+						src="https://imgur.com/EEI0UeG.jpg"
 						alt="supervisor feature icon"
 					/>
 				</li>
@@ -828,7 +828,7 @@
 						and visions for each one of us.
 					</p>
 					<img
-						src="https://imgur.com/cmV5iRF.jpg"
+						src="https://imgur.com/rkMmPPq.jpg"
 						alt="supervisor feature icon"
 					/>
 				</li>
@@ -1570,12 +1570,34 @@
 
 		<script src="js/iframeResizer.contentWindow.min.js"></script>
 		<script>
+			var currentSpeakerCount = 32,
+				loadMoreCounter = 0,
+				defaultShowSpeakers = 8;
 			$(function () {
 				// $(".item").slice(0, 8).show(); // select the first ten
 				$("#load").click(function (e) {
-					// click event for load more
 					e.preventDefault();
-					$(".item:hidden").slice(0, 8).show(); // select next 10 hidden divs and show them
+					loadMoreCounter++;
+					console.log(
+						currentSpeakerCount,
+						loadMoreCounter,
+						parseInt(
+							(currentSpeakerCount - defaultShowSpeakers) /
+								defaultShowSpeakers
+						)
+					);
+
+					// click event for load more
+					$(".item:hidden").slice(0, defaultShowSpeakers).show(); // select next 10 hidden divs and show them
+					if (
+						loadMoreCounter >=
+						parseInt(
+							(currentSpeakerCount - defaultShowSpeakers) /
+								defaultShowSpeakers
+						)
+					) {
+						$("#load").hide();
+					}
 				});
 			});
 
