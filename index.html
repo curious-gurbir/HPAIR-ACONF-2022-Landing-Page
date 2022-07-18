@@ -646,6 +646,50 @@
 				color: #fff;
 				background: #279082;
 			}
+			#stats-container {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				/* color: #00917c; */
+				color: #222222;
+				/* opacity: 0.5; */
+			}
+			.stat-div {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				flex-grow: 1;
+				border-right: 2px solid #707070;
+			}
+			.stat-div:last-of-type {
+				border: none;
+			}
+			.stat-num {
+				font-size: 25px;
+				font-weight: 700;
+			}
+			.stat-text {
+				white-space: nowrap;
+				font-size: 16px;
+				font-weight: 500;
+			}
+			@media (max-width: 440px) {
+				.stat-num {
+					font-size: 20px;
+				}
+				.stat-text {
+					font-size: 13px;
+				}
+			}
+			@media (max-width: 400px) {
+				.stat-num {
+					font-size: 18px;
+				}
+				.stat-text {
+					font-size: 12px;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -677,6 +721,25 @@
 		</center>
 
 		<!--HERO SECTION ENDS-->
+		<br /><br />
+
+		<!-- STATS SECTION BEGINS -->
+		<div id="stats-container">
+			<div class="stat-div">
+				<div class="stat-num">49</div>
+				<div class="stat-text">Conferences</div>
+			</div>
+			<div class="stat-div">
+				<div class="stat-num">39</div>
+				<div class="stat-text">Countries</div>
+			</div>
+			<div class="stat-div">
+				<div class="stat-num">40K+</div>
+				<div class="stat-text">Lives Impacted</div>
+			</div>
+		</div>
+
+		<!-- STATS SECTION ENDS -->
 
 		<br /><br />
 
@@ -785,7 +848,7 @@
 						select community to be the architect of change
 					</p>
 					<img
-						src="https://imgur.com/EEI0UeG.jpg"
+						src="https://imgur.com/Cr9EK5U.jpg"
 						alt="supervisor feature icon"
 					/>
 				</li>
@@ -828,7 +891,7 @@
 						and visions for each one of us.
 					</p>
 					<img
-						src="https://imgur.com/rkMmPPq.jpg"
+						src="https://imgur.com/yAgw5zQ.jpg"
 						alt="supervisor feature icon"
 					/>
 				</li>
