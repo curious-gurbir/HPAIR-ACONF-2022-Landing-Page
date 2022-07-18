@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>marquee</title>
+    <style>
+      .slider{
+        height: 120px;
+        margin: auto;
+        position: relative;
+        width: 90%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+      .slide-track{
+        display: flex;
+        width: calc(120px * 22);
+        animation: scroll 20s linear infinite;
+      }
+      .slide{
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        perspective: 100px;
+      }
+      .slider img{
+        width: 100%;
+        transition: transform 1s;
+      }
+      .slider img:hover{
+        transform: translateZ(20px);
+      }
+      .slider::before, .slide::after{
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 15%;
+        z-index: 2;
+      }
+      .slider::before{
+        left: 0;
+        top: 0;
+      }
+      @keyframes scroll {
+        0%{
+          transform: translateX(0);
+        }
+        100%{
+          transform: translateX(calc(-120px * 22));
+        }
+      }
+
+
+      .slider-two{
+        height: 120px;
+        margin: auto;
+        position: relative;
+        width: 90%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+      .slide-track-two{
+        display: flex;
+        width: calc(120px * 22);
+        animation: scroll 20s linear infinite;
+        animation-direction: reverse;
+      }
+      .slide-two{
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        perspective: 100px;
+      }
+      .slider-two img{
+        width: 100%;
+        transition: transform 1s;
+      }
+      .slider-two img:hover{
+        transform: translateZ(20px);
+      }
+      .slider-two::before, .slide-two::after{
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 15%;
+        z-index: 2;
+      }
+      .slider-two::before{
+        left: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide">
+          <img src="./web/1.png">
+        </div>
+        <div class="slide">
+          <img src="./web/2.png">
+        </div>
+        <div class="slide">
+          <img src="./web/3.png">
+        </div>
+        <div class="slide">
+          <img src="./web/4.png">
+        </div>
+        <div class="slide">
+          <img src="./web/5.png">
+        </div>
+        <div class="slide">
+          <img src="./web/6.png">
+        </div>
+        <div class="slide">
+          <img src="./web/7.png">
+        </div>
+        <div class="slide">
+          <img src="./web/8.png">
+        </div>
+        <div class="slide">
+          <img src="./web/9.png">
+        </div>
+        <div class="slide">
+          <img src="./web/10.png">
+        </div>
+        <div class="slide">
+          <img src="./web/11.png">
+        </div>
+
+        <div class="slide">
+          <img src="./web/1.png">
+        </div>
+        <div class="slide">
+          <img src="./web/2.png">
+        </div>
+        <div class="slide">
+          <img src="./web/3.png">
+        </div>
+        <div class="slide">
+          <img src="./web/4.png">
+        </div>
+        <div class="slide">
+          <img src="./web/5.png">
+        </div>
+        <div class="slide">
+          <img src="./web/6.png">
+        </div>
+        <div class="slide">
+          <img src="./web/7.png">
+        </div>
+        <div class="slide">
+          <img src="./web/8.png">
+        </div>
+        <div class="slide">
+          <img src="./web/9.png">
+        </div>
+        <div class="slide">
+          <img src="./web/10.png">
+        </div>
+        <div class="slide">
+          <img src="./web/11.png">
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="slider-two">
+      <div class="slide-track-two">
+        <div class="slide-two">
+          <img src="./web/1.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/2.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/3.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/4.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/5.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/6.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/7.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/8.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/9.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/10.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/11.png">
+        </div>
+
+        <div class="slide-two">
+          <img src="./web/1.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/2.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/3.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/4.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/5.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/6.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/7.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/8.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/9.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/10.png">
+        </div>
+        <div class="slide-two">
+          <img src="./web/11.png">
+        </div>
+
+
+      </div>
+    </div>
+  </body>
+</html>
