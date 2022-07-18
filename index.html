@@ -69,6 +69,7 @@
 
 		<script src="js/iframeResizer.contentWindow.min.js"></script>
 		<script defer src="speakers.js"></script>
+		<link rel="stylesheet" href="speakers.css" />
 		<script defer src="past-speakers.js"></script>
 		<script defer src="faqs.js"></script>
 		<title>Landing Page</title>
@@ -84,53 +85,6 @@
 			body {
 				overflow-x: hidden;
 			}
-
-			.speakers-grid {
-				width: 90vw;
-			}
-			.speakers-grid > article img:first-of-type {
-				width: 25vmin;
-				height: 25vmin;
-				min-width: 160px;
-				min-height: 160px;
-				max-width: 200px;
-				max-height: 200px;
-				align-items: center;
-				justify-content: center;
-				border: 2px solid #e8e8e8;
-				object-fit: cover;
-				border-radius: 10px;
-			}
-			.speaker-logo {
-				max-width: 40%;
-				max-height: 65px;
-				margin-top: 10px;
-			}
-
-			.speakers-grid {
-				font-size: 16px;
-			}
-			.speakers-grid article {
-				padding-bottom: 15px;
-			}
-			.speaker-name {
-				font-size: 22px;
-				font-weight: bold;
-			}
-			.speaker-name::after {
-				content: "\a";
-				white-space: pre;
-			}
-
-			.speaker-grid span {
-				font-weight: 400;
-			}
-
-			.speaker-title {
-				max-width: 80%;
-				display: inline-block;
-			}
-
 			.past-speakers-grid {
 				margin: 0 80px;
 			}
@@ -175,6 +129,9 @@
 			}
 
 			@media (max-width: 443px) {
+				h1 {
+					font-size: 1.3rem;
+				}
 				header > h1 {
 					font-size: 1.6em;
 				}
@@ -192,6 +149,10 @@
 
 				/* Alignment */
 				margin: auto;
+			}
+
+			.cards-container img {
+				border-radius: 8px;
 			}
 
 			@media (min-width: 788px) {
@@ -254,7 +215,7 @@
 				bottom: 32px;
 				right: 32px; */
 				margin-top: 15px;
-				max-height: 150px;
+				/* max-height: 150px; */
 				max-width: 90%;
 			}
 
@@ -317,7 +278,7 @@
 
 			@media (max-width: 787px) {
 				[class$="feature-card"] {
-					width: fit-content;
+					width: 90vw;
 					height: fit-content;
 					margin: auto;
 				}
@@ -453,28 +414,6 @@
 				}
 			}
 
-			#load {
-				padding: 20px;
-				border-radius: 20px;
-				border: 2px solid black;
-				background-color: black;
-				color: white;
-				text-decoration: none;
-			}
-
-			#load:hover {
-				background-color: white;
-				color: black;
-				transition: 0.5s ease-in-out;
-				text-decoration: none;
-			}
-
-			@media (min-width: 640px) {
-				#load {
-					display: none;
-				}
-			}
-
 			.hero-banner img {
 				height: 30%;
 				width: 30%;
@@ -512,6 +451,11 @@
 					font-size: 14px;
 					margin-top: 10px;
 					color: #929292;
+				}
+			}
+			@media (max-width: 380px) {
+				.hero-content h3 {
+					font-size: 14px;
 				}
 			}
 			.hero-button a {
@@ -577,132 +521,12 @@
 				line-height: 20px;
 				font-size: 400;
 			}
-			.speakers-grid {
-				width: 90vw;
-				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-				grid-gap: 30px;
-				align-items: start;
-			}
-			.speakers-grid > article img:first-of-type {
-				width: 25vmin;
-				height: 25vmin;
-				min-width: 160px;
-				min-height: 160px;
-				max-width: 200px;
-				max-height: 200px;
-				align-items: center;
-				justify-content: center;
-				border: 2px solid #e8e8e8;
-				object-fit: cover;
-				border-radius: 10px;
-			}
-			.speaker-logo {
-				max-width: 40%;
-				max-height: 65px;
-				margin-top: 10px;
-			}
-			.speakers-grid {
-				font-size: 16px;
-			}
-			.speakers-grid article {
-				padding-bottom: 15px;
-			}
-			.speaker-name {
-				font-size: 22px;
-				font-weight: bold;
-			}
-			.speaker-name::after {
-				content: "\a";
-				white-space: pre;
-			}
 
-			.speaker-grid span {
-				font-weight: 400;
-			}
-
-			.speaker-title {
-				max-width: 80%;
-				display: inline-block;
-			}
-			@media (max-width: 900px) {
-				.speakers-grid {
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(200px, 1fr)
-					);
-					display: none;
+			@media (max-width: 410px) {
+				.ticket-card {
+					width: 90vw;
 				}
 			}
-			@media (max-width: 640px) {
-				.speakers-grid > article {
-					display: none;
-				}
-			}
-			@media (max-width: 590px) {
-				.speaker-logo {
-					max-width: 50%;
-				}
-				.speakers-grid {
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(180px, 1fr)
-					);
-				}
-			}
-			@media (max-width: 440px) {
-				.speakers-grid {
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(140px, 1fr)
-					);
-				}
-				.speaker-title {
-					font-size: 14px;
-				}
-			}
-			@media (max-width: 380px) {
-				.speakers-grid {
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(100px, 1fr)
-					);
-				}
-				.speakers-grid > article img:first-of-type {
-					min-width: 40vmin;
-					min-height: 40vmin;
-				}
-				.speaker-name {
-					font-size: 18px;
-				}
-				.speaker-title {
-					font-size: 12px;
-				}
-			}
-			#load {
-				padding: 20px;
-				border-radius: 20px;
-				border: 2px solid black;
-				background-color: black;
-				color: white;
-				text-decoration: none;
-			}
-
-			#load:hover {
-				background-color: white;
-				color: black;
-				transition: 0.5s ease-in-out;
-				text-decoration: none;
-			}
-			/* #load {
-				display: none;
-			} */
-			@media (min-width: 640px) {
-				#load {
-					display: none;
-				}
-			}
-
 			@media (min-width: 640px) {
 				.timeline-mob {
 					display: none;
@@ -874,7 +698,8 @@
 				flex-direction: column;
 			}
 			.faq-hr-line {
-				width: 60%;
+				width: 90%;
+				max-width: 800px;
 				margin: auto;
 			}
 			.faq-body p {
@@ -889,7 +714,8 @@
 				color: #444;
 				cursor: pointer;
 				padding: 30px 20px;
-				width: 60%;
+				width: 90%;
+				max-width: 800px;
 				border: none;
 				outline: none;
 				transition: 0.4s;
@@ -897,8 +723,10 @@
 			}
 			.faq-body {
 				margin: auto;
+				max-width: 800px;
+
 				/* text-align: center; */
-				width: 50%;
+				width: 90%;
 				padding: auto;
 			}
 			/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -925,6 +753,36 @@
 				content: "\2796";
 				/* Unicode character for "minus" sign (-) */
 			}
+			@media (max-width: 800px) {
+				.faq-question {
+					font-size: 18px;
+				}
+			}
+			@media (max-width: 640px) {
+				.faq-question {
+					font-size: 16px;
+				}
+				.faq-body {
+					font-size: 14px;
+				}
+			}
+			.register-btn {
+				color: #279082;
+				border: 2px solid #279082;
+				background: transparent;
+				border-radius: 50px;
+				text-decoration: none;
+				padding: 15px 28px;
+				font-size: 16px;
+				text-transform: uppercase;
+				font-weight: 500;
+				letter-spacing: 1px;
+				transition-duration: 0.2s;
+			}
+			.register-btn:hover {
+				color: #fff;
+				background: #279082;
+			}
 		</style>
 	</head>
 	<body>
@@ -950,6 +808,10 @@
 						<a href="https://my.hpair.org/">Apply Now</a>
 					</div><br> -->
 					<div class="hero-date">20-24 Aug, 2022</div>
+					<br /><br />
+					<a href="https://my.hpair.org" class="register-btn">
+						Register Now
+					</a>
 				</div>
 			</div>
 		</center>
@@ -963,8 +825,8 @@
 		<div class="container">
 			<center>
 				<img
-					src="./Group 179.jpg"
-					alt="Group-179"
+					src="https://imgur.com/u1PJpKe.jpg"
+					alt="Associated Brands Section"
 					border="0"
 					style="height: 100%; width: 100%"
 				/>
@@ -992,19 +854,17 @@
 
 		<!--OUR SPEAKERS SECTION BEGINS-->
 
-		<center><h1>OUR SPEAKERS</h1></center>
-		<br />
-		<div class="container blogBox moreBox" id="myList">
-			<center>
-				<main class="speakers-grid"></main>
-				<br />
-				<br />
-				<div>
-					<a href="#" id="load">Load More</a>
-				</div>
-			</center>
-		</div>
-
+		<center>
+			<h1>OUR SPEAKERS</h1>
+			<br />
+			<br />
+			<main class="speakers-grid"></main>
+			<br />
+			<br />
+			<div>
+				<a href="#" id="load">Load More</a>
+			</div>
+		</center>
 		<br /><br />
 
 		<!--OUR SPEAKERS SECTION ENDS-->
@@ -1025,7 +885,7 @@
 						select community to be the architect of change
 					</p>
 					<img
-						src="https://i.ibb.co/Cm600Yx/Capture.png"
+						src="https://imgur.com/DlriMwQ.jpg"
 						alt="supervisor feature icon"
 					/>
 				</li>
@@ -1039,7 +899,7 @@
 						reflect.
 					</p>
 					<img
-						src="https://i.ibb.co/BPMq03W/Group-175.jpg"
+						src="https://imgur.com/9aIk939.jpg"
 						alt="supervisor feature icon"
 					/>
 				</li>
@@ -1054,7 +914,7 @@
 						the rewards will be yours.
 					</p>
 					<img
-						src="https://i.ibb.co/PmQMXPq/image-73.jpg"
+						src="https://imgur.com/3mH0laS.jpg"
 						alt="supervisor feature icon"
 					/>
 				</li>
@@ -1068,7 +928,7 @@
 						and visions for each one of us.
 					</p>
 					<img
-						src="https://i.ibb.co/SwPnyPV/Group-249.png"
+						src="https://imgur.com/cmV5iRF.jpg"
 						alt="supervisor feature icon"
 					/>
 				</li>
@@ -1077,7 +937,12 @@
 
 		<!--FEATURES SECTION ENDS-->
 
-		<br /><br />
+		<br /><br /><br />
+		<center>
+			<a href="https://my.hpair.org" class="register-btn">
+				Register Now
+			</a>
+		</center>
 		<br /><br />
 		<br />
 
@@ -1089,314 +954,13 @@
 				<div
 					id="past-speakers-wrapper"
 					class="card-wrapper swiper-wrapper"
-				>
-					<!-- <div class="card swiper-slide">
-						<div class="image-content">
-							<span class="overlay"></span>
-
-							<div class="card-image">
-								<img
-									src="images/past-speaker-images/Aparna Bawa.jpg"
-									alt="Aparna Bawa - COO of Zoom Image"
-									class="card-img"
-								/>
-							</div>
-							<div class="card-logo">
-								<img
-									src="images/past-speaker-logos/Aparna Bawa Logo.png"
-									alt="Aparna Bawa - COO of Zoom logo"
-									class="card-logo-img"
-								/>
-							</div>
-						</div>
-
-						<div class="card-content">
-							<h2 class="name">Aparna Bawa</h2>
-							<p class="description">COO of Zoom</p>
-						</div>
-					</div>
-
-					<div class="card swiper-slide">
-						<div class="image-content">
-							<span class="overlay"></span>
-
-							<div class="card-image">
-								<img
-									src="https://i.ibb.co/5x1y30L/Group-163.png"
-									alt=""
-									class="card-img"
-								/>
-							</div>
-						</div>
-
-						<div class="card-content">
-							<h2 class="name">N.R. Narayana Murthy</h2>
-							<p class="description">
-								Founder, Chairman & Former CEO, Infosys - Board
-								Member, UN Foundation
-							</p>
-						</div>
-					</div>
-
-					<div class="card swiper-slide">
-						<div class="image-content">
-							<span class="overlay"></span>
-
-							<div class="card-image">
-								<img
-									src="https://i.ibb.co/WGhRMWF/Group-162.png"
-									alt=""
-									class="card-img"
-								/>
-							</div>
-						</div>
-
-						<div class="card-content">
-							<h2 class="name">Kevin Sneader</h2>
-							<p class="description">
-								CEO & Global Managing Partner, McKinsey &
-								Company
-							</p>
-						</div>
-					</div>
-
-					<div class="card swiper-slide">
-						<div class="image-content">
-							<span class="overlay"></span>
-
-							<div class="card-image">
-								<img
-									src="https://i.ibb.co/kKdRnsp/Mask-group-3.png"
-									alt=""
-									class="card-img"
-								/>
-							</div>
-						</div>
-
-						<div class="card-content">
-							<h2 class="name">Tim Draper</h2>
-							<p class="description">
-								Renowned Venture Capitalist Billionaire Investor
-								in Tesla, SpaceX, Twitter, Robinhood, Baidu,
-								Skype & others
-							</p>
-						</div>
-					</div>
-
-					<div class="card swiper-slide">
-						<div class="image-content">
-							<span class="overlay"></span>
-
-							<div class="card-image">
-								<img
-									src="https://i.ibb.co/s1r0f52/Group-176.png"
-									alt=""
-									class="card-img"
-								/>
-							</div>
-						</div>
-
-						<div class="card-content">
-							<h2 class="name">The Honorable Ban Ki-Moon</h2>
-							<p class="description">
-								Secretary General, United Nations & Former
-								Foreign Minister, Republic of Korea
-							</p>
-						</div>
-					</div>
-
-					<div class="card swiper-slide">
-						<div class="image-content">
-							<span class="overlay"></span>
-
-							<div class="card-image">
-								<img
-									src="https://i.ibb.co/26gYcsz/Mask-group-2.png"
-									alt=""
-									class="card-img"
-								/>
-							</div>
-						</div>
-
-						<div class="card-content">
-							<h2 class="name">Adam D'Angelon</h2>
-							<p class="description">
-								Former CTO of Facebook CEO & Co-Founder of Quora
-								Board Member of Instagram & OpenAI
-							</p>
-						</div>
-					</div>
-
-					<div class="card swiper-slide">
-						<div class="image-content">
-							<span class="overlay"></span>
-
-							<div class="card-image">
-								<img
-									src="https://i.ibb.co/3psY8Kf/Mask-group-1.png"
-									alt=""
-									class="card-img"
-								/>
-							</div>
-						</div>
-
-						<div class="card-content">
-							<h2 class="name">Justin Kan</h2>
-							<p class="description">
-								Co-Founder of Twitch Former Partner at Y
-								Combinator
-							</p>
-						</div>
-					</div>
-
-					<div class="card swiper-slide">
-						<div class="image-content">
-							<span class="overlay"></span>
-
-							<div class="card-image">
-								<img
-									src="https://i.ibb.co/fpGz78z/Mask-group.png"
-									alt=""
-									class="card-img"
-								/>
-							</div>
-						</div>
-
-						<div class="card-content">
-							<h2 class="name">Joseph Lubin</h2>
-							<p class="description">
-								Founder, ConsenSys Co-Founder, Ethereum
-							</p>
-						</div>
-					</div> -->
-				</div>
+				></div>
 			</div>
 
 			<div class="swiper-button-next swiper-navBtn"></div>
 			<div class="swiper-button-prev swiper-navBtn"></div>
 			<div class="swiper-pagination"></div>
 		</div>
-		<!-- <div class="container">
-			<center>
-				<main
-					class="past-speakers-grid"
-					style="
-						display: grid;
-						grid-template-columns: repeat(
-							auto-fill,
-							minmax(250px, 1fr)
-						);
-						grid-gap: 30px;
-						align-items: stretch;
-					"
-				>
-					<article>
-						<img
-							src="https://i.ibb.co/fpGz78z/Mask-group.png"
-							alt="Sample photo"
-						/>
-						<div class="past-speakers-text">
-							<span class="speaker-name">Joseph Lubin</span>
-							<span>Founder, ConsenSys Co-Founder, Ethereum</span>
-						</div>
-					</article>
-					<article>
-						<img
-							src="https://i.ibb.co/3psY8Kf/Mask-group-1.png"
-							alt="Sample photo"
-						/>
-						<div class="past-speakers-text">
-							<span class="speaker-name">Justin Kan</span>
-							<span>
-								Co-Founder of Twitch Former Partner at Y
-								Combinator
-							</span>
-						</div>
-					</article>
-					<article>
-						<img
-							src="https://i.ibb.co/26gYcsz/Mask-group-2.png"
-							alt="Sample photo"
-						/>
-						<div class="past-speakers-text">
-							<span class="speaker-name">Adam D'Angelo</span>
-							<span>
-								Former CTO of Facebook CEO & Co-Founder of Quora
-								Board Member of Instagram & OpenAI
-							</span>
-						</div>
-					</article>
-					<article>
-						<img
-							src="https://i.ibb.co/s1r0f52/Group-176.png"
-							alt="Sample photo"
-						/>
-						<div class="past-speakers-text">
-							<span class="speaker-name"
-								>The Honorable Ban Ki-Moon</span
-							>
-							<span>
-								Secretary General, United Nations & Former
-								Foreign Minister, Republic of Korea
-							</span>
-						</div>
-					</article>
-					<article>
-						<img
-							src="https://i.ibb.co/kKdRnsp/Mask-group-3.png"
-							alt="Sample photo"
-						/>
-						<div class="past-speakers-text">
-							<span class="speaker-name">Tim Draper</span>
-							<span>
-								Renowned Venture Capitalist Billionaire Investor
-								in Tesla, SpaceX, Twitter, Robinhood, Baidu,
-								Skype & others
-							</span>
-						</div>
-					</article>
-					<article>
-						<img
-							src="https://i.ibb.co/WGhRMWF/Group-162.png"
-							alt="Sample photo"
-						/>
-						<div class="past-speakers-text">
-							<span class="speaker-name">Kevin Sneader</span>
-							<span>
-								CEO & Global Managing Partner, McKinsey &
-								Company
-							</span>
-						</div>
-					</article>
-					<article>
-						<img
-							src="https://i.ibb.co/5x1y30L/Group-163.png"
-							alt="Sample photo"
-						/>
-						<div class="past-speakers-text">
-							<span class="speaker-name"
-								>N.R. Narayana Murthy</span
-							>
-							<span>
-								Founder, Chairman & Former CEO, Infosys - Board
-								Member, UN Foundation
-							</span>
-						</div>
-					</article>
-					<article>
-						<img
-							src="https://i.ibb.co/DRHZshB/Group-164.png"
-							alt="Sample photo"
-						/>
-						<div class="past-speakers-text">
-							<span class="speaker-name">Aparna Bawa</span>
-							<span>COO of Zoom</span>
-						</div>
-					</article>
-				</main>
-			</center>
-		</div> -->
-
 		<!--PAST SPEAKERS SECTION ENDS-->
 
 		<br /><br />
@@ -2064,8 +1628,13 @@
 		<!--TICKET SECTION ENDS-->
 
 		<br /><br />
-
-		<br /><br />
+		<br />
+		<center>
+			<a href="https://my.hpair.org" class="register-btn">
+				Register Now
+			</a>
+		</center>
+		<br /><br /><br />
 		<!--CONFERENCE TIMELINE BEGINS-->
 		<div class="timeline-container">
 			<center><h1>CONFERENCE TIMELINE</h1></center>
@@ -2073,13 +1642,13 @@
 			<center>
 				<img
 					class="timeline-web"
-					src="./Group 309.png"
+					src="https://imgur.com/gVYhF0x.png"
 					width="80%"
 					height="80%"
 				/>
 				<img
 					class="timeline-mob"
-					src="./Group 303.png"
+					src="https://imgur.com/zfLhBEb.png"
 					width="80%"
 					height="80%"
 				/>
@@ -2102,11 +1671,11 @@
 		<script src="js/iframeResizer.contentWindow.min.js"></script>
 		<script>
 			$(function () {
-				$(".item").slice(0, 4).show(); // select the first ten
+				// $(".item").slice(0, 8).show(); // select the first ten
 				$("#load").click(function (e) {
 					// click event for load more
 					e.preventDefault();
-					$(".item:hidden").slice(1, 4).show(); // select next 10 hidden divs and show them
+					$(".item:hidden").slice(0, 8).show(); // select next 10 hidden divs and show them
 				});
 			});
 
@@ -2139,6 +1708,7 @@
 					},
 				},
 			});
+
 			// const root = document.documentElement;
 			// const marqueeElementsDisplayed = getComputedStyle(
 			// 	root

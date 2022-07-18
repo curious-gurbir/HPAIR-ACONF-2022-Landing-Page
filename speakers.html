@@ -18,6 +18,7 @@
 		></script>
 		<script src="js/iframeResizer.contentWindow.min.js"></script>
 		<script defer src="speakers.js"></script>
+		<link rel="stylesheet" href="speakers.css" />
 		<title>Speaker Section</title>
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
@@ -26,130 +27,6 @@
 				padding: 0;
 				box-sizing: border-box;
 				font-family: "Poppins", sans-serif;
-			}
-			.speakers-grid {
-				width: 90vw;
-				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-				grid-gap: 30px;
-				align-items: start;
-			}
-			.speakers-grid > article img:first-of-type {
-				width: 25vmin;
-				height: 25vmin;
-				min-width: 160px;
-				min-height: 160px;
-				max-width: 200px;
-				max-height: 200px;
-				align-items: center;
-				justify-content: center;
-				border: 2px solid #e8e8e8;
-				object-fit: cover;
-				border-radius: 10px;
-			}
-			.speaker-logo {
-				max-width: 40%;
-				max-height: 65px;
-				margin-top: 10px;
-			}
-			.speakers-grid {
-				font-size: 16px;
-			}
-			.speakers-grid article {
-				padding-bottom: 15px;
-			}
-			.speaker-name {
-				font-size: 22px;
-				font-weight: bold;
-			}
-			.speaker-name::after {
-				content: "\a";
-				white-space: pre;
-			}
-
-			.speaker-grid span {
-				font-weight: 400;
-			}
-
-			.speaker-title {
-				max-width: 80%;
-				display: inline-block;
-			}
-			@media (max-width: 900px) {
-				.speakers-grid {
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(200px, 1fr)
-					);
-				}
-			}
-			@media (max-width: 640px) {
-				.speakers-grid > article {
-					display: none;
-				}
-			}
-			@media (max-width: 590px) {
-				.speaker-logo {
-					max-width: 50%;
-				}
-				.speakers-grid {
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(180px, 1fr)
-					);
-				}
-			}
-			@media (max-width: 440px) {
-				.speakers-grid {
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(140px, 1fr)
-					);
-				}
-				.speaker-title {
-					font-size: 14px;
-				}
-			}
-			@media (max-width: 380px) {
-				.speakers-grid {
-					grid-template-columns: repeat(
-						auto-fill,
-						minmax(100px, 1fr)
-					);
-				}
-				.speakers-grid > article img:first-of-type {
-					min-width: 40vmin;
-					min-height: 40vmin;
-				}
-				.speaker-name {
-					font-size: 18px;
-				}
-				.speaker-title {
-					font-size: 12px;
-				}
-			}
-			#load {
-				padding: 20px;
-				border-radius: 20px;
-				border: 2px solid black;
-				background-color: black;
-				color: white;
-				text-decoration: none;
-			}
-
-			#load:hover {
-				background-color: white;
-				color: black;
-				transition: 0.5s ease-in-out;
-				text-decoration: none;
-			}
-			/* #load {
-				display: none;
-			} */
-			@media (min-width: 640px) {
-				#load {
-					display: none;
-				}
 			}
 		</style>
 	</head>
