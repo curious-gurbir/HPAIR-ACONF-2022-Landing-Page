@@ -72,6 +72,8 @@
 		<link rel="stylesheet" href="speakers.css" />
 		<script defer src="past-speakers.js"></script>
 		<script defer src="faqs.js"></script>
+		<script defer src="brands.js"></script>
+		<link rel="stylesheet" href="brands.css" />
 		<title>Landing Page</title>
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
@@ -548,144 +550,6 @@
 					display: none;
 				}
 			}
-			/* :root {
-				--marquee-width: 80%;
-				--marquee-height: 80%;
-				--marquee-elements-displayed: 5;
-				--marquee-element-width: calc(
-					var(--marquee-width) / var(--marquee-elements-displayed)
-				);
-				--marquee-animation-duration: calc(
-					var(--marquee-elements) * 2s
-				);
-			}
-
-			.marquee-left {
-				width: var(--marquee-width);
-				height: var(--marquee-height);
-				overflow: hidden;
-				position: relative;
-			}
-			.marquee-left:before,
-			.marquee-left:after {
-				position: absolute;
-				top: 0;
-				width: 80%;
-				height: 80%;
-				content: "";
-				z-index: 1;
-			}
-			.marquee-left:before {
-				left: 0;
-			}
-			.marquee-left:after {
-				right: 0;
-			}
-			.marquee-content-left {
-				list-style: none;
-				height: 100%;
-				display: flex;
-				animation: scrolling var(--marquee-animation-duration) linear
-					infinite;
-			} */
-			/* .marquee-content:hover {
-		animation-play-state: paused;
-		} */
-			@keyframes scrolling {
-				0% {
-					transform: translateX(0);
-				}
-				100% {
-					transform: translateX(
-						calc(
-							-1 * var(--marquee-element-width) * var(--marquee-elements)
-						)
-					);
-				}
-			}
-			.marquee-content-left li {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				/* text-align: center; */
-				flex-shrink: 0;
-				width: var(--marquee-element-width);
-				font-size: calc(var(--marquee-height) * 3 / 4); /* 5rem; */
-				white-space: nowrap;
-			}
-
-			.marquee-content-left li img {
-				width: 70%;
-				height: 30%;
-			}
-
-			@media (max-width: 600px) {
-				:root {
-					--marquee-width: 100%;
-					--marquee-height: 100%;
-					--marquee-elements-displayed: 3;
-				}
-			}
-
-			.marquee-right {
-				width: var(--marquee-width);
-				height: var(--marquee-height);
-				overflow: hidden;
-				position: relative;
-			}
-			.marquee-right:before,
-			.marquee-right:after {
-				position: absolute;
-				top: 0;
-				width: 80%;
-				height: 80%;
-				content: "";
-				z-index: 1;
-			}
-			.marquee-right:before {
-				left: 0;
-			}
-			.marquee-right:after {
-				right: 0;
-			}
-			.marquee-content-right {
-				list-style: none;
-				height: 100%;
-				display: flex;
-				animation: scrolling var(--marquee-animation-duration) linear
-					infinite;
-				animation-direction: reverse;
-			}
-			/* .marquee-content:hover {
-		animation-play-state: paused;
-		} */
-			@keyframes scrolling {
-				0% {
-					transform: translateX(0);
-				}
-				100% {
-					transform: translateX(
-						calc(
-							-1 * var(--marquee-element-width) * var(--marquee-elements)
-						)
-					);
-				}
-			}
-			.marquee-content-right li {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				/* text-align: center; */
-				flex-shrink: 0;
-				width: var(--marquee-element-width);
-				font-size: calc(var(--marquee-height) * 3 / 4); /* 5rem; */
-				white-space: nowrap;
-			}
-
-			.marquee-content-right li img {
-				width: 70%;
-				height: 30%;
-			}
 
 			.faq-heading {
 				border-bottom: #777;
@@ -820,8 +684,13 @@
 		<br /><br />
 
 		<!--BRAND SECTION BEGINS-->
-
-		<div class="container">
+		<center>
+			<h1 style="width: 90vw; max-width: 600px">
+				A private network of select delegates from 40+ countries
+			</h1>
+		</center>
+		<br />
+		<!-- <div class="container">
 			<center>
 				<img
 					src="https://imgur.com/u1PJpKe.jpg"
@@ -830,9 +699,44 @@
 					style="height: 100%; width: 100%"
 				/>
 			</center>
+		</div> -->
+
+		<div id="marquee-container">
+			<div class="marquee marquee-left">
+				<img src="images/brands/1.png" alt="Brand Image" />
+				<img src="images/brands/2.png" alt="Brand Image" />
+				<img src="images/brands/3.png" alt="Brand Image" />
+				<img src="images/brands/4.png" alt="Brand Image" />
+				<img src="images/brands/5.png" alt="Brand Image" />
+				<img src="images/brands/6.png" alt="Brand Image" />
+				<img src="images/brands/7.png" alt="Brand Image" />
+				<img src="images/brands/8.png" alt="Brand Image" />
+				<img src="images/brands/24.png" alt="Brand Image" />
+			</div>
+			<div class="marquee marquee-right">
+				<img src="images/brands/9.png" alt="Brand Image" />
+				<img src="images/brands/10.png" alt="Brand Image" />
+				<img src="images/brands/11.png" alt="Brand Image" />
+				<img src="images/brands/12.png" alt="Brand Image" />
+				<img src="images/brands/13.png" alt="Brand Image" />
+				<img src="images/brands/14.png" alt="Brand Image" />
+				<img src="images/brands/15.png" alt="Brand Image" />
+			</div>
+			<div class="marquee marquee-left">
+				<img src="images/brands/16.png" alt="Brand Image" />
+				<img src="images/brands/17.png" alt="Brand Image" />
+				<img src="images/brands/18.png" alt="Brand Image" />
+				<img src="images/brands/26.png" alt="Brand Image" />
+				<img src="images/brands/20.png" alt="Brand Image" />
+				<img src="images/brands/21.png" alt="Brand Image" />
+				<img src="images/brands/22.png" alt="Brand Image" />
+				<img src="images/brands/23.png" alt="Brand Image" />
+			</div>
 		</div>
 
 		<!--BRAND SECTION ENDS-->
+
+		<br /><br /><br />
 
 		<!--THEME SECTION BEGINS-->
 		<center>
