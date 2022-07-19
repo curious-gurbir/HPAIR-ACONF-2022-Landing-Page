@@ -73,6 +73,7 @@
 		<script defer src="past-speakers.js"></script>
 		<script defer src="faqs.js"></script>
 		<script defer src="brands.js"></script>
+		<script defer src="stats.js"></script>
 		<link rel="stylesheet" href="brands.css" />
 		<title>Landing Page</title>
 		<style>
@@ -207,6 +208,8 @@
 			[class$="feature-card"] h2,
 			[class$="feature-card"] p {
 				margin: 0;
+				max-width: 95%;
+				/* text-align: justify; */
 			}
 			[class$="feature-card"] h2 {
 				margin-bottom: 10px;
@@ -218,7 +221,7 @@
 				right: 32px; */
 				margin-top: 15px;
 				/* max-height: 150px; */
-				max-width: 90%;
+				max-width: 100%;
 			}
 
 			/*
@@ -690,6 +693,44 @@
 					font-size: 12px;
 				}
 			}
+			#testimonials-container {
+				width: 100vw;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			#testimonials-container iframe {
+				width: 40vw;
+				height: 22.5vw;
+				min-width: 300px;
+				min-height: 168.75px;
+				margin: 30px 0;
+			}
+			@media (max-width: 640px) {
+				#testimonials-container iframe {
+					width: 90vw;
+					height: 50.625vw;
+					margin: 10px 0;
+				}
+				#testimonials-container {
+					gap: 20px;
+				}
+			}
+			.btn-1 {
+				color: white;
+				background-color: #1c1c1c;
+				padding: 10px 24px;
+				border-radius: 8px;
+				cursor: pointer;
+				transition-duration: 0.2s;
+			}
+			.btn-1:hover {
+				opacity: 0.9;
+			}
+			.hidden {
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -714,7 +755,7 @@
 					<div class="hero-date">20-24 Aug, 2022</div>
 					<br /><br />
 					<a href="https://my.hpair.org" class="register-btn">
-						Register Now
+						Become a delegate
 					</a>
 				</div>
 			</div>
@@ -726,15 +767,15 @@
 		<!-- STATS SECTION BEGINS -->
 		<div id="stats-container">
 			<div class="stat-div">
-				<div class="stat-num">49</div>
+				<div class="stat-num counter" data-count="49">0</div>
 				<div class="stat-text">Conferences</div>
 			</div>
 			<div class="stat-div">
-				<div class="stat-num">39</div>
+				<div class="stat-num counter" data-count="39">0</div>
 				<div class="stat-text">Countries</div>
 			</div>
 			<div class="stat-div">
-				<div class="stat-num">40K+</div>
+				<div class="stat-num counter" data-count="40000">0</div>
 				<div class="stat-text">Lives Impacted</div>
 			</div>
 		</div>
@@ -903,7 +944,7 @@
 		<br /><br /><br />
 		<center>
 			<a href="https://my.hpair.org" class="register-btn">
-				Register Now
+				Become a delegate
 			</a>
 		</center>
 		<br /><br />
@@ -1594,12 +1635,56 @@
 		<br />
 		<center>
 			<a href="https://my.hpair.org" class="register-btn">
-				Register Now
+				Become a delegate
 			</a>
 		</center>
 		<br /><br /><br />
+		<!-- TESTIMONIAL VIDEOS SECTION BEGINS -->
+		<center>
+			<h1 style="color: #4c4e61">
+				Testimonials &nbsp;<i class="fa-solid fa-people-group"></i>
+			</h1>
+		</center>
+		<br />
+		<div id="testimonials-container">
+			<iframe
+				src="https://youtube.com/embed/tm2mmNHRtts"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			></iframe>
+			<iframe
+				src="https://youtube.com/embed/rz5jPtUXlTA"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			></iframe>
+			<iframe
+				class="hidden"
+				src="https://youtube.com/embed/k0PdvjQGi0M"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			></iframe>
+			<iframe
+				class="hidden"
+				src="https://youtube.com/embed/VemlqXJG9eg"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			></iframe>
+		</div>
+		<center style="margin-top: 20px">
+			<span class="btn-1" id="testimonial-load">Load More</span>
+		</center>
+		<!-- TESTIMONIAL VIDEOS SECTION ENDS -->
+
 		<!--CONFERENCE TIMELINE BEGINS-->
-		<div class="timeline-container">
+		<!-- <div class="timeline-container">
 			<center><h1>CONFERENCE TIMELINE</h1></center>
 			<br /><br />
 			<center>
@@ -1616,10 +1701,10 @@
 					height="80%"
 				/>
 			</center>
-		</div>
+		</div> -->
 		<!--CONFERENCE TIMELINE ENDS-->
 
-		<br /><br /><br />
+		<br /><br />
 
 		<!-- FAQ SECTION BEGINS HERE -->
 		<main>
@@ -1662,6 +1747,11 @@
 						$("#load").hide();
 					}
 				});
+			});
+
+			$("#testimonial-load").click(function () {
+				$(this).hide();
+				$(".hidden").toggleClass("hidden");
 			});
 
 			var swiper = new Swiper(".slide-content", {
