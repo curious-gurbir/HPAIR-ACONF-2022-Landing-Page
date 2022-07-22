@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"
+			integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<title>FAQs</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+				color: #2f2f2f;
+			}
+			#guides {
+				width: 95%;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 35px;
+			}
+			.guide {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				cursor: pointer;
+				transition-duration: 0.2s;
+				margin: 20px 0;
+			}
+			.guide:hover {
+				transform: scale(1.02);
+			}
+			.guide-img {
+				width: 100%;
+				max-width: 300px;
+			}
+			.guide-title {
+				text-align: left;
+				font-size: 18px;
+				font-weight: 500;
+			}
+			a {
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h1>HPAIR Guides</h1>
+			<br />
+			<div id="guides"></div>
+		</center>
+	</body>
+	<script>
+		var FAQ_DATA;
+
+		$(document).ready(function () {
+			$.ajaxSetup({
+				cache: false,
+			});
+			$.get("data/guides.csv", "text", function (data) {
+				FAQ_DATA = $.csv.toObjects(data);
+				FAQ_DATA.map((faq) => {
+					addFAQ(faq.title, faq.link);
+				});
+			});
+		});
+
+		function addFAQ(title, link) {
+			document.querySelector("#guides").innerHTML += `
+                <a href="${link}" target="_blank">
+					<div class="guide">
+						<img class="guide-img" src="images/guides/${title.toLowerCase()}.jpg" alt="Guide Cover" />
+						<span class="guide-title">${title}</span>
+					</div>
+				</a>
+            `;
+		}
+	</script>
+</html>
