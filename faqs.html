@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"
+			integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<title>FAQs</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+				color: #2f2f2f;
+			}
+			.faq {
+				width: 80%;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				margin: 18px 0;
+			}
+			.question {
+				font-size: 20px;
+				font-weight: 700;
+				text-align: left;
+				margin-bottom: 4px;
+			}
+			.question::before {
+				content: "Q. ";
+			}
+			.answer {
+				font-size: 16px;
+				color: #8e8e8e;
+				text-align: left;
+			}
+			.answer::before {
+				content: "A. ";
+			}
+			.faq-hr-line {
+				width: 80%;
+				height: 1.5px;
+				border: none;
+				background-color: black;
+				opacity: 0.1;
+			}
+		</style>
+	</head>
+	<body>
+		<center id="faq-container">
+			<h1>Frequently Asked Questions</h1>
+			<br />
+			<div class="faq">
+				<div class="question">Here goes the question</div>
+				<div class="answer">Here goes the answer</div>
+			</div>
+			<hr class="faq-hr-line" />
+		</center>
+	</body>
+	<script>
+		var FAQ_DATA;
+
+		$(document).ready(function () {
+			$.ajaxSetup({
+				cache: false,
+			});
+			$.get("data/faqs-page.csv", "text", function (data) {
+				FAQ_DATA = $.csv.toObjects(data);
+				FAQ_DATA.map((faq) => {
+					addFAQ(faq.question, faq.answer);
+				});
+			});
+		});
+
+		function addFAQ(ques, ans) {
+			document.querySelector("#faq-container").innerHTML += `
+                <div class="faq">
+                    <div class="question">${ques}</div>
+                    <div class="answer">${ans}</div>
+                </div>
+                <hr class="faq-hr-line" />
+            `;
+		}
+	</script>
+</html>
