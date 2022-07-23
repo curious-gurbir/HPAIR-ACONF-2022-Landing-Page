@@ -87,6 +87,11 @@
 
 			body {
 				overflow-x: hidden;
+				-ms-overflow-style: none;  /* Internet Explorer 10+ */
+				scrollbar-width: none;  /* Firefox */
+			}
+			body::-webkit-scrollbar { 
+				display: none;  /* Safari and Chrome */
 			}
 			.past-speakers-grid {
 				margin: 0 80px;
@@ -1724,7 +1729,7 @@
 			</a>
 		</center>
 		<!-- FAQ SECTION ENDS HERE -->
-
+		<br><br>
 		<script src="js/iframeResizer.contentWindow.min.js"></script>
 		<script>
 			var currentSpeakerCount = 32,
