@@ -531,6 +531,25 @@
 				line-height: 20px;
 				font-size: 400;
 			}
+			.ticket-card-price-container{
+				display:flex;
+				width: 100%;
+				align-items: center;
+				justify-content: space-evenly;
+			}
+			.ticket-card-price-line{
+				width: 2px;
+				height: 73px;
+				background: #e9e9e9;
+			}
+			.ticket-card-price{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap:10px;
+				color: #222;
+			}
 
 			@media (max-width: 410px) {
 				.ticket-card {
@@ -1022,10 +1041,20 @@
 							margin-top: 20px;
 						"
 					>
-						<h1 style="font-size: 48px">$595</h1>
+					<div class="ticket-card-price-container">
+						<div class="ticket-card-price">
+							<p>Early Round</p>
+							<h1 style="font-size: 38px">$495</h1>
+						</div>
+						<div class="ticket-card-price-line"></div>
+						<div class="ticket-card-price">
+							<p>Regular/Bonus Round</p>
+							<h1 style="font-size: 38px">$595</h1>
+						</div>
+					</div>
 						<h4
 							style="
-								margin: 30px 10px 20px 10px;
+								margin: 20px 10px 20px 10px;
 								font-weight: 100;
 								font-size: 14px;
 								color: grey;
@@ -1340,7 +1369,17 @@
 							align-items: center;
 						"
 					>
-						<h1 style="font-size: 48px">$295</h1>
+						<div class="ticket-card-price-container">
+						<div class="ticket-card-price">
+							<p>Early Round</p>
+							<h1 style="font-size: 38px">$195</h1>
+						</div>
+						<div class="ticket-card-price-line"></div>
+						<div class="ticket-card-price">
+							<p>Regular/Bonus Round</p>
+							<h1 style="font-size: 38px">$295</h1>
+						</div>
+					</div>
 						<p
 							style="
 								margin: 30px 10px 20px 10px;
