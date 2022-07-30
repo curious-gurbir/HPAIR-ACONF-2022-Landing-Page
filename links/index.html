@@ -1,0 +1,229 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="linkfolio.00webhost.com" />
+		<meta property="og:title" content="Link Folio" />
+		<meta property="og:description" content="Connect the links." />
+		<link rel="shortcut icon" href="../logos/logo.png" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>@gurbirdhaliwal | Link Folio</title>
+		<style>
+			*:focus {
+				outline: none;
+			}
+			body {
+				background: linear-gradient(
+					-45deg,
+					#ee7752,
+					#e73c7e,
+					#23a6d5,
+					#23d5ab
+				);
+				background-size: 400% 400%;
+				animation: gradient 30s ease infinite;
+				margin: 0;
+				padding: 0;
+			}
+
+			@keyframes gradient {
+				0% {
+					background-position: 0% 50%;
+				}
+				50% {
+					background-position: 100% 50%;
+				}
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+			#dp {
+				border-radius: 50%;
+				width: 96px;
+				height: 96px;
+				position: absolute;
+				left: 50%;
+				top: 0;
+				transform: translate(-50%, 0);
+			}
+			#uname {
+				font-family: Karla;
+				color: white;
+				font-weight: 700;
+				font-size: 16px;
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				transform: translate(-50%, 0);
+			}
+			#header {
+				width: 100%;
+				height: 136px;
+				position: relative;
+				margin-bottom: 32px;
+				display: inline-block;
+			}
+			#main {
+				width: 95%;
+				max-width: 680px;
+				margin: 25px 0;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+			.btn-round {
+				width: 100%;
+				max-width: 680px;
+				padding: 16px 32px;
+				display: inline-block;
+				background: white;
+				border-radius: 50px;
+				margin: 12px 0;
+				line-height: 24px;
+				font-weight: 700;
+				font-size: 16px;
+				font-family: Karla;
+				border: none;
+				position: relative;
+				box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
+				transition-duration: 0.25s;
+				cursor: pointer;
+			}
+			.btn-round:hover {
+				box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+			}
+			#social {
+				margin: 25px 0;
+				width: 100%;
+				display: none;
+			}
+			.social-icon {
+				width: 40px;
+				height: 40px;
+				display: inline-block;
+				fill: white;
+				transition-duration: 0.25s;
+				margin: 5px 10px;
+			}
+			.social-icon:hover {
+				width: 45px;
+				height: 45px;
+				margin: 0 7.5px;
+			}
+			a {
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main" source="unknown">
+			<div id="header">
+				<img id="dp" src="logo.jpeg" />
+				<span id="uname">HPAIR ACONF INDIA 2022</span>
+			</div>
+			<a
+				href="https://drive.google.com/drive/folders/1SedtVsKw-zfYmNE03yN2NeYnctgPUZtp"
+				target="_blank"
+			>
+				<button class="btn-round">HPAIR Guides</button>
+			</a>
+			<a href="https://my.hpair.org" target="_blank">
+				<button class="btn-round">HPAIR Dashboard</button>
+			</a>
+			<div id="social">
+				<center>
+					<a
+						href="https://instagram.com/officialhpair"
+						target="_blank"
+					>
+						<img
+							src="icons/instagram.svg"
+							alt="instagram"
+							class="social-icon"
+						/>
+					</a>
+					<a href="https://twitter.com/hpairtweets" target="_blank">
+						<img
+							src="icons/twitter.svg"
+							alt="twitter"
+							class="social-icon"
+						/>
+					</a>
+					<a href="https://wa.me/+18448037847" target="_blank">
+						<img
+							src="icons/whatsapp.svg"
+							alt="twitter"
+							class="social-icon"
+						/>
+					</a>
+					<a
+						href="https://www.youtube.com/channel/UCNze2-3do4qTgVbqK8LHzYQ"
+						target="_blank"
+					>
+						<img
+							src="icons/youtube.svg"
+							alt="youtube"
+							class="social-icon"
+						/> </a
+					><a
+						href="https://www.linkedin.com/company/harvard-project-for-asian-and-international-relations-hpair-"
+						target="_blank"
+					>
+						<img
+							src="icons/linkedin.svg"
+							alt="linkedin"
+							class="social-icon"
+						/>
+					</a>
+
+					<a
+						href="https://www.facebook.com/official.hpair/"
+						target="_blank"
+					>
+						<img
+							src="icons/facebook.svg"
+							alt="instagram"
+							class="social-icon"
+						/>
+					</a>
+				</center>
+			</div>
+		</div>
+		<script>
+			const toSVG = (query, callback) => {
+				const images = document.querySelectorAll(query);
+
+				images.forEach((image) => {
+					fetch(image.src)
+						.then((res) => res.text())
+						.then((data) => {
+							const parser = new DOMParser();
+							const svg = parser
+								.parseFromString(data, "image/svg+xml")
+								.querySelector("svg");
+
+							if (image.id) svg.id = image.id;
+							if (image.className)
+								svg.classList = image.classList;
+
+							image.parentNode.replaceChild(svg, image);
+						})
+						.then(callback)
+						.catch((error) => console.error(error));
+				});
+			};
+
+			toSVG(".social-icon", showSocial);
+
+			function showSocial() {
+				document.getElementById("social").style.display =
+					"inline-block";
+			}
+		</script>
+	</body>
+</html>
